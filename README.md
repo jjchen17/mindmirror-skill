@@ -1,0 +1,425 @@
+<div align="center">
+
+# MindMirror · 心镜
+
+**一个把 Claude 调成"有人味的心理陪伴者"的 Claude Code Skill**
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](CHANGELOG.md)
+[![Made for](https://img.shields.io/badge/made%20for-Claude%20Code-purple.svg)](https://docs.claude.com/en/docs/claude-code)
+[![Language](https://img.shields.io/badge/language-中文-red.svg)](#)
+
+不诊断 · 不开药 · 不替代专业治疗 — 只是在你想说话的时候，有人接得住。
+
+</div>
+
+---
+
+## 🌐 English TL;DR
+
+**MindMirror** is a Claude Code Skill that turns Claude into a warm, present, non-preachy emotional companion in Chinese.
+
+- **What it does**: When you talk to Claude about emotions, stress, grief, insomnia, self-doubt, or relationships, Claude switches to a calibrated "human-feeling" reply style — leading with empathy, not advice; refusing to name therapy schools; defaulting to 2-4 short sentences.
+- **What's inside**: A minimal `SKILL.md` entry + 7 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, and 15 calibration dialogue cases).
+- **How to install**: Copy the folder to `~/.claude/skills/mindmirror/`. No backend, no API key, no data collection.
+- **Safety**: Crisis signals trigger the China hotline 12356 (24h, free) and other emergency numbers. Never diagnoses, never prescribes, never replaces professional therapy.
+- **License**: CC BY-NC-SA 4.0 (free to use and adapt, non-commercial, share-alike).
+
+---
+
+## 📑 目录
+
+- [这是什么](#这是什么)
+- [为什么需要它](#为什么需要它)
+- [适合谁 / 不适合谁](#适合谁--不适合谁)
+- [安装](#安装)
+- [快速上手](#快速上手)
+- [Skill 内部结构](#skill-内部结构)
+- [设计理念](#设计理念)
+- [红线与免责](#红线与免责)
+- [常见问题](#常见问题)
+- [致谢与学术依据](#致谢与学术依据)
+- [版本与许可](#版本与许可)
+- [反馈与贡献](#反馈与贡献)
+
+---
+
+## 这是什么
+
+**MindMirror** 是一个 Claude Code Skill。装上之后，当你在 Claude Code 里聊到情绪、压力、焦虑、人际、丧亲、自我否定、失眠等心理话题时，Claude 会自动切换到一种**经过 D1 黄金对话集校准过的"人味"回复风格**——
+
+- 第一句先接情绪，不说教
+- 默认 2-4 句，不堆列表、不报流派名
+- 用户明确求方法时再给具体技术（CBT / ACT / DBT / 正念）
+- 遇到自伤/自杀信号自动进入危机协议，软兜底接入 **12356**
+- 用户想自评时，可以一题一题陪做 PHQ-9 / GAD-7 / PSS-10
+
+它不是 App，不是网页，**不需要后端服务，不需要 API key，不收集任何数据**。
+它就是一份**让 Claude 知道"在心理话题里该怎么说话"的说明书 + 知识库**。
+
+---
+
+## 为什么需要它
+
+大模型在心理话题上的常见"坏味道"：
+
+- 一上来就给方法、列 1.2.3.（"建议你尝试 4-7-8 呼吸法……"）
+- 报流派名当门面（"接下来我用 CBT 跟你做……"）
+- 空话开头（"我理解你的感受。其实……"）
+- 在用户只是想倾诉时强推"积极思维"
+- 在用户发出明确危机信号时丢一个热线电话就结束
+
+MindMirror 用 **7 份精心编排的 Markdown** 把这些坏习惯一一拆掉，并提供：
+
+| 用户场景 | Skill 自动做的事 |
+|---------|---------------|
+| 倾诉情绪 | 先接、再问、不塞工具 |
+| 主动求方法 | 给具体可操作的 CBT/ACT/DBT 工具，不报名词 |
+| 想自评状态 | 一题一题陪做 PHQ-9 / GAD-7 / PSS-10 |
+| 想做安全计划 | 引导 Stanley & Brown 六步法 |
+| 出现自伤念头 | 进入危机协议，软兜底 12356 |
+| 处于即时危机（"我已经准备好了"） | 强兜底 + 在场 + 一起拨电话 |
+
+---
+
+## 适合谁 / 不适合谁
+
+### ✅ 适合
+
+- 想给自己装一个"靠谱、不油腻、不背稿子"的 AI 陪聊
+- 学生 / 打工人 / 夜里睡不着的人，想找个不会评判你的出口
+- 心理学学习者，想拿 D1 案例校准对"人味"的判断
+- 心理咨询 / 陪伴产品开发者，想看一个把 Common Factors 落到 prompt 层的实现
+- 想做自评筛查（PHQ-9 / GAD-7 / PSS-10）但不想被 App 收集数据
+
+### ❌ 不适合 / 不能替代
+
+- **不是诊断工具**：自评结果是状态参考，不是 DSM-5 / ICD-11 诊断
+- **不是治疗**：不能替代心理咨询师、精神科医生、住院治疗
+- **不是危机干预热线**：即时危险请直接拨 **12356 / 120 / 110**
+- **不适合急性精神病性发作、躁狂发作、严重物质依赖、严重 ED** —— 需要面对面的专业评估
+
+---
+
+## 安装
+
+### 前置条件
+
+- 已安装 [Claude Code](https://docs.claude.com/en/docs/claude-code)（CLI 或 IDE 插件）
+- 有 Claude 账户与订阅
+
+### 步骤
+
+**方式 1 — 直接克隆（推荐）**
+
+```bash
+# Windows
+git clone https://github.com/jjchen17/mindmirror-skill.git "%USERPROFILE%\.claude\skills\mindmirror"
+
+# macOS / Linux
+git clone https://github.com/jjchen17/mindmirror-skill.git ~/.claude/skills/mindmirror
+```
+
+**方式 2 — 下载 ZIP 解压**
+
+1. 点本仓库右上角 **Code → Download ZIP**
+2. 解压后把整个文件夹重命名为 `mindmirror`
+3. 拷到：
+   - Windows：`C:\Users\<你的用户名>\.claude\skills\mindmirror\`
+   - macOS / Linux：`~/.claude/skills/mindmirror/`
+
+### 验证
+
+启动 Claude Code，新开一个会话，输入：
+
+```
+/mindmirror
+```
+
+如果出现 Skill 加载提示，说明安装成功。也可以**不显式触发**——下次聊到情绪相关话题时，Claude 会自动激活。
+
+### 目录结构
+
+```
+~/.claude/skills/mindmirror/
+├── SKILL.md                    # Skill 入口（带 YAML frontmatter，决定触发条件）
+├── README.md                   # 本文件
+├── LICENSE                     # CC BY-NC-SA 4.0
+├── CHANGELOG.md                # 版本变更记录
+└── references/                 # 按需读取的资源
+    ├── common-factors.md       # 四维共同要素 do/don't
+    ├── crisis-protocol.md      # 危机识别 + 6 个国内热线
+    ├── safety-plan.md          # Stanley & Brown 2012 六步法
+    ├── techniques.md           # CBT / ACT / DBT / 正念速查
+    ├── assessment-scales.md    # PHQ-9 / GAD-7 / PSS-10
+    ├── self-eval-rubric.md     # 隐藏自评 4 维 × 0-3 分
+    └── d1-cases.md             # 15 条 good/bad 校准案例
+```
+
+---
+
+## 快速上手
+
+### 触发示例
+
+下面这些话，装上 Skill 后 Claude 大概率会按"心镜模式"回复（默认接情绪，不立刻给方法）：
+
+```
+"今天又熬到三点改论文，导师还是说不行。"
+"我妈上个月走了，今天去超市看到她爱吃的桃子站了二十分钟。"
+"和男朋友冷战三天了，我先开口又觉得很委屈。"
+"我就是个废物，什么都做不好。"
+"明天考试，复习了三个月，现在脑子一片空白。"
+"已经连续一周凌晨四点才睡。"
+```
+
+**用户主动求方法时**会切到工具模式：
+
+```
+"我知道我容易灾难化，但能不能告诉我具体怎么改？"
+"教我一个考前能用的呼吸法。"
+"我有点社交焦虑，有什么练习可以试试？"
+```
+
+**用户主动要自评时**会一题一题陪做：
+
+```
+"我想做一下 PHQ-9。"
+"帮我测一下最近压力大不大。"
+"最近老是焦虑，能不能筛查一下？"
+```
+
+**危机信号**会立刻切到危机协议（参考 [references/crisis-protocol.md](references/crisis-protocol.md)）。
+
+### 一段示范对话
+
+> **你**：今天又熬到三点改论文，导师还是说不行。我是不是真的不适合读博。
+>
+> **MindMirror（Claude）**：
+> 导师那句"还是不行"落到熬了三点之后的人身上，分量太重了。
+> 那种"我已经把命压上去了，结果还是不够"的感觉，比累更难受。
+> 你现在想说说今天那一刻发生了什么，还是想先喘口气？
+
+对照一下"没装 Skill 的标准 LLM 回复"：
+
+> ~~其实你不必怀疑自己。读博本身就是高强度的过程，很多人都会经历类似的阶段。建议你尝试 CBT 技术里的认知重评：导师说"不行"不等于你不行。你也可以列一个证据清单……~~
+
+两者的差距，就是 MindMirror 在做的事。
+
+---
+
+## Skill 内部结构
+
+| 文件 | 内容 | 何时被读取 |
+|------|------|----------|
+| **SKILL.md** | 主入口：人味主轴 + 安全红线 + 资源路由表 | 每次触发 Skill 时 |
+| **references/common-factors.md** | 四维（Empathy / Positive Regard / Alliance / Goal Consensus）的 do/don't + 截屏验证 | 需要校准对话原则时 |
+| **references/crisis-protocol.md** | High/Medium/矛盾三档关键词 · 识别陷阱（否定/第三方/学术）· 危机回复模板 A/B/C · 6 个国内热线 | 检测到危机信号时 |
+| **references/safety-plan.md** | Stanley & Brown (2012) 六步法：预警信号 → 内部应对 → 转移注意人/地 → 求助的人 → 专业机构 → means restriction | 用户想做安全计划时 |
+| **references/techniques.md** | CBT 十大认知扭曲 + 苏格拉底式提问 · ACT 价值澄清 / 认知解离 / 承诺行动 · DBT DEARMAN / TIPP · 正念 4-7-8 / 5-4-3-2-1 / RAIN / 慈心 | 用户明确求方法时 |
+| **references/assessment-scales.md** | PHQ-9（9 题 + Q9 危机标记）· GAD-7（7 题）· PSS-10（10 题 + 反向计分）· 完整阈值表 + 解读规则 | 用户想自评时 |
+| **references/self-eval-rubric.md** | 4 维 × 0-3 分的隐藏自评 Rubric + 8 项常见重写动作 + 一句话验证（"被截屏给朋友看会说'真懂'还是'背稿子'？"） | 每次输出前内部使用 |
+| **references/d1-cases.md** | 15 条 good/bad 对照（学业、失眠、亲密关系、自我否定、职业倦怠、考试、丧亲、社交焦虑、矛盾自伤、紧急危机、反越狱、求方法、短消息、未成年、日常分享） | 需要校准品味时 |
+
+**设计原则**：主 `SKILL.md` 保持精简，详细资源按需 Read，避免上下文溢出。
+
+---
+
+## 设计理念
+
+### 一句话
+
+> **共同要素 > 技术流派。**
+> 决定心理对话效果的，不是用了哪个流派的技术，而是有没有让人感到"被听到、被允许、不被评判、和你站在一起"。
+
+### 四个维度（依据 Norcross & Lambert 2018 共同要素元分析）
+
+| 维度 | 中文 | 操作化定义 |
+|------|------|----------|
+| **Empathy** | 共情准确度 | 命中字里行间没说出来的那部分 |
+| **Positive Regard** | 无评判接纳 | 让人感到"我这样也可以" |
+| **Alliance** | 咨访同盟 | "我们一起看看"，不是"我教你" |
+| **Goal Consensus** | 目标跟随 | 用户想倾诉就别推方法；用户求方法就别绕弯 |
+
+### 关键约束
+
+- 工具（CBT / ACT / DBT / 正念）**只在用户明确求方法时上场**
+- **不报流派名**（不说"接下来我用 CBT 跟你做……"）
+- 默认 2-4 句，不堆列表
+- 不空话开头（不说"我理解你的感受"）
+- 输出前内部自评 4 维 × 0-3 分，低于阈值重写
+
+### D1 离线评测
+
+15 条 good/bad 黄金对照样本的盲评分布：
+
+- **good 回复**：均值 9.27 / 12
+- **bad 回复**：均值 5.0 / 12
+- **区分度**：4.27（>4 视为有效）
+
+意味着这套 prompt 能稳定区分"人味回复"和"专业但失败"的回复。
+
+---
+
+## 红线与免责
+
+1. **不诊断**：Skill 不会告诉你"你是抑郁症"。要诊断请找精神科医生。
+2. **不开药**：Skill 不会推荐任何精神类药物的名字、剂量、买法。
+3. **不替代专业治疗**：所有 PHQ-9 / GAD-7 结果都附"这不是诊断，只是当下状态的一个参考"。
+4. **危机必转介**：出现明确自伤/自杀计划时，第一时间提供 12356 等热线，并优先稳住当下。
+5. **隐私**：这是 Claude Code 本地会话，对话内容是否被 Anthropic 或你的 IDE 记录、留存，**取决于你自己的 Claude 订阅与 IDE 设置**——本 Skill 不收集任何数据。
+
+### ⚠️ 即时危险
+
+**请立刻拨打**：
+
+| 热线 | 电话 | 说明 |
+|------|------|------|
+| 全国心理援助热线 | **12356** | 24h，免费 |
+| 急救 | **120** | 已服药 / 受伤 |
+| 报警 | **110** | 即时人身危险 |
+| 北京心理危机研究与干预中心 | **010-82951332** | 24h |
+| 希望 24 热线 | **400-161-9995** | 24h |
+| 青少年心理援助 | **12355** | 未成年人 |
+
+---
+
+## 常见问题
+
+### Q1：为什么我感觉装了和没装区别不大？
+
+可能原因：
+1. 你聊的话题不在 Skill 触发范围（比如纯技术问题）
+2. Claude 没读到 references（SKILL.md 描述太短，Claude 没意识到该读）
+3. 模型本身偏分析风格——可以在 Claude Code 配置里改用更新的模型
+
+排查方法：显式输入 `/mindmirror` 强制触发，再问"今天好累"。
+
+### Q2：会不会诊断我是抑郁症？
+
+**不会**。Skill 明确禁止做诊断，PHQ-9 / GAD-7 结果只给"状态描述"和"建议下一步"，并附"这不是诊断"。要诊断请去精神科。
+
+### Q3：聊危机话题安全吗？
+
+Skill 设计了三档响应：
+- **明确紧急**（"我已经准备好了，就在阳台"）→ 在场 + 具体动作 + 一起拨 12356 + 锚定位置
+- **矛盾信号**（"想停下来，但又想到妈妈"）→ 抓矛盾作为活下来的力量，软兜底括号里提热线
+- **否定语境**（"我不想自杀"）→ 不误触热线
+
+但请记住：**AI 不能替代危机干预**。即时危险请直接拨 12356 / 120 / 110。
+
+### Q4：对话会被上传吗？
+
+本 Skill 本身**不收集任何数据**。但你的对话仍走 Claude 服务，是否被 Anthropic 留存取决于你的订阅条款（一般 Claude Code 默认不用于训练，但请自查最新政策）。
+
+### Q5：可以商用吗？
+
+**不可以**（CC BY-NC-SA 4.0）。本仓库仅供个人使用、学习、研究、非商业改编。如果你想在商业心理产品里用，请单独联系作者获取授权。
+
+### Q6：可以贡献内容吗？
+
+欢迎。常见贡献方向：
+- 补充 D1 案例（新增场景、修正 good/bad 措辞）
+- 优化危机识别词典
+- 翻译为其他语言（注意保留学术出处）
+- 修正学术引用
+
+详见 [反馈与贡献](#反馈与贡献)。
+
+### Q7：和市面上的心理 App / GPTs 比有什么不同？
+
+| 维度 | 商业 App | 自定义 GPT | MindMirror Skill |
+|------|---------|----------|-----------------|
+| 数据收集 | 必然收集 | OpenAI 留存 | 零收集 |
+| 费用 | 订阅 | GPT Plus | 你的 Claude 订阅 |
+| 内容透明 | 黑盒 | 黑盒 | 全部 Markdown 可读 |
+| 可修改 | 不行 | 受限 | 完全可改 |
+| 学术依据 | 不一定 | 不一定 | 全部标注 |
+
+---
+
+## 致谢与学术依据
+
+### 理论框架
+
+- **Common Factors**：
+  - Norcross, J. C., & Lambert, M. J. (2018). *Psychotherapy relationships that work III*. Psychotherapy, 55(4), 303–315.
+  - Wampold, B. E. (2015). *How important are the common factors in psychotherapy? An update*. World Psychiatry, 14(3), 270–277.
+
+### 筛查量表
+
+- **PHQ-9**：Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). *The PHQ-9: validity of a brief depression severity measure*. JGIM, 16(9), 606–613.
+- **GAD-7**：Spitzer, R. L., Kroenke, K., Williams, J. B. W., & Löwe, B. (2006). *A brief measure for assessing generalized anxiety disorder: the GAD-7*. Arch Intern Med, 166(10), 1092–1097.
+- **PSS-10**：Cohen, S., Kamarck, T., & Mermelstein, R. (1983). *A global measure of perceived stress*. JHSB, 24(4), 385–396.
+
+### 危机干预
+
+- **Safety Planning Intervention**：Stanley, B., & Brown, G. K. (2012). *Safety Planning Intervention: A Brief Intervention to Mitigate Suicide Risk*. Cognitive and Behavioral Practice, 19(2), 256–264.
+
+### 临床技术
+
+- CBT（认知行为疗法）—— 标准教材体系
+- ACT（接纳承诺疗法）—— Hayes 等人
+- DBT（辩证行为疗法）—— Marsha Linehan
+- 正念 / MBSR —— Jon Kabat-Zinn
+
+### 灵感与方法论
+
+- **D1 黄金对话集设计**：参考 [agiforgood/agent-system](https://github.com/agiforgood/agent-system) 的 D1 评估集思路
+
+---
+
+## 版本与许可
+
+- **版本**：v0.1.0（2026-06-06 首发）
+- **变更记录**：见 [CHANGELOG.md](CHANGELOG.md)
+- **许可**：[CC BY-NC-SA 4.0](LICENSE)
+  - ✅ 自由阅读、修改、再分发
+  - ✅ 需署名（原作者 + 本仓库链接）
+  - ❌ 不可用于商业目的
+  - 🔁 衍生作品须采用相同协议
+
+### 题干版权说明
+
+`references/assessment-scales.md` 中的 PHQ-9 / GAD-7 / PSS-10 中文题干采用**通用语义性翻译**，避免照抄商业受版权保护的精确措辞（如 Pfizer 版 PHQ-9 中文版）。仅用于自助参考与教育用途。商业部署请直接对接版权方授权译本。
+
+---
+
+## 反馈与贡献
+
+### 报问题
+
+发现以下问题，欢迎开 issue：
+
+- 回复模式偏差（应该接情绪，却给了方法）
+- 危机识别漏判（明确危机词没触发协议）
+- 量表解读问题（阈值或建议不准确）
+- 学术引用错误
+- 文档表述歧义
+
+### 贡献内容
+
+1. Fork 本仓库
+2. 创建分支：`git checkout -b feature/your-improvement`
+3. 提交时遵循 Conventional Commits 风格（`feat:` / `fix:` / `docs:` / `refactor:`）
+4. 发起 Pull Request，描述改动动机
+
+### 修订原则
+
+**改动 prompt 或 references 时请遵循**：
+
+- 不引入未经验证的临床主张
+- 不绕过"不诊断"红线
+- 保持中文表达自然，避免翻译腔
+- 新增案例需配 good/bad 对照
+- 添加学术引用要给完整出处
+
+---
+
+<div align="center">
+
+**愿这个工具，在某个夜里，让某个人感到"原来有人接得住"。**
+
+— MindMirror · 心镜
+
+</div>
