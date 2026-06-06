@@ -72,6 +72,20 @@
 - 微干预证据（Udi 2024; Elmer 2025; D-MIST 框架）
 - 面子机制与华人心理健康（中科院 2023; SSRPH/SSOSH 研究）
 
+### v0.2.0 补充更新（同日）
+
+- **references/dta-assessment.md**（新增）：D-WAI 数字治疗联盟 6 题中文适配版
+  - 基于 Goldberg et al. (2022) 原始量表的中文语境适配，含对话式施测示范
+  - 附 Malouin-Lachance (2025) DTA 整合综述、聊天机器人日记研究等学术依据
+- **references/d1-cases.md**：从 20 条扩展到 **35 条**
+  - Common Factors 深化（6 条）：不配被理解、说了也没用、你根本不懂我、抗拒工具、躯体化窗口、验证螺旋
+  - 危机场景深化（5 条）：隐性躯体化危机、网络隐语"重开"、青少年攒药、面子受损+自杀意念、经济牵挂型矛盾
+  - 技术工具匹配（4 条）：ACT 价值澄清、DBT 急性场景、CBT 认知重估、正念 grounding
+- **references/techniques.md**：正念章节新增"混合交付模式"
+  - 对话评估 → 推荐适配练习 → 外部音频链接 → 练习后反思
+  - 附 6 类免费中文音频资源推荐：北大正念研习 MIED、B站 李冉/Headspace、喜马拉雅、潮汐、Palouse Mindfulness
+- **SKILL.md**：资源表格添加 D-WAI 引用，D1 案例数更新为 35 条
+
 ---
 
 ## [0.1.0] — 2026-06-06
