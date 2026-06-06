@@ -367,23 +367,47 @@ Skill 设计了三档响应：
 - **Common Factors**：
   - Norcross, J. C., & Lambert, M. J. (2018). *Psychotherapy relationships that work III*. Psychotherapy, 55(4), 303–315.
   - Wampold, B. E. (2015). *How important are the common factors in psychotherapy? An update*. World Psychiatry, 14(3), 270–277.
+  - Cuijpers, P., Reijnders, M., & Huibers, M. J. H. (2019). *The role of common factors in psychotherapy outcomes*. Annual Review of Clinical Psychology, 15, 207–231.
+- **AI 共情与用户感知**：
+  - Ayers, J. W. 等 (2023). *Comparing physician and artificial intelligence chatbot responses to patient questions posted to a public social media forum*. JAMA Internal Medicine.
+  - Liu 等 (2025). *The illusion of empathy: How AI chatbots shape conversation perception*. arXiv.
+- **生成式 AI 心理陪伴有效性**：
+  - Heinz 等 (2025). *Randomized trial of generative AI chatbot for mental health treatment*. NEJM AI.
+  - Zhang 等 (2025). *Generative AI mental health chatbots as therapeutic tools: Systematic review and meta-analysis*. JMIR.
+- **跨文化适配**：
+  - Nagayama Hall 等 (2019). *Cultural adaptation of CBT for Asian ancestry clients*. Cognitive Therapy and Research.
 
 ### 筛查量表
 
-- **PHQ-9**：Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). *The PHQ-9: validity of a brief depression severity measure*. JGIM, 16(9), 606–613.
-- **GAD-7**：Spitzer, R. L., Kroenke, K., Williams, J. B. W., & Löwe, B. (2006). *A brief measure for assessing generalized anxiety disorder: the GAD-7*. Arch Intern Med, 166(10), 1092–1097.
-- **PSS-10**：Cohen, S., Kamarck, T., & Mermelstein, R. (1983). *A global measure of perceived stress*. JHSB, 24(4), 385–396.
+- **PHQ-9（英文原版）**：Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). *The PHQ-9: validity of a brief depression severity measure*. JGIM, 16(9), 606–613.
+- **PHQ-9（中文版验证）**：He, Y. 等 (2014). *Reliability and validity of the Chinese version of the PHQ-9 in the general population*. Comprehensive Psychiatry.
+- **GAD-7（英文原版）**：Spitzer, R. L., Kroenke, K., Williams, J. B. W., & Löwe, B. (2006). *A brief measure for assessing generalized anxiety disorder: the GAD-7*. Arch Intern Med, 166(10), 1092–1097.
+- **GAD-7（中文版验证）**：Sun, J. 等 (2021). *Psychometric properties of GAD-7 in a large sample of Chinese adolescents*. Healthcare (Basel).
+- **PSS-10（英文原版）**：Cohen, S., Kamarck, T., & Mermelstein, R. (1983). *A global measure of perceived stress*. JHSB, 24(4), 385–396.
+- **PSS-10（中文版验证）**：Wang, Q. 等 (2024). *Psychometric properties of PSS-10 among pregnant women in China*. Children and Youth Services Review, 156.
 
 ### 危机干预
 
-- **Safety Planning Intervention**：Stanley, B., & Brown, G. K. (2012). *Safety Planning Intervention: A Brief Intervention to Mitigate Suicide Risk*. Cognitive and Behavioral Practice, 19(2), 256–264.
+- **Safety Planning Intervention（原版）**：Stanley, B., & Brown, G. K. (2012). *Safety Planning Intervention: A Brief Intervention to Mitigate Suicide Risk*. Cognitive and Behavioral Practice, 19(2), 256–264.
+- **SPI+ 队列研究**：Stanley, B. 等 (2018). *Comparison of the Safety Planning Intervention With Follow-up vs Usual Care of Suicidal Patients Treated in the Emergency Department*. JAMA Psychiatry, 75(9), 894–900.
+- **自杀矛盾性动态评估**：Ernst, M. 等 (2024). *Ambulatory assessment of suicidal ambivalence: The temporal variability of the wish to live and the wish to die*. Suicide and Life-Threatening Behavior.
+- **AI 危机响应警示**：Pichowicz, M. 等 (2025). *Zero of 29 AI chatbots provided adequate suicide-crisis responses*. Scientific Reports.
 
 ### 临床技术
 
 - CBT（认知行为疗法）—— 标准教材体系
+- CBT-LLM（中文专用模型）：Na, H. (2024). *CBT-LLM: A Chinese large language model for cognitive behavioral therapy-based mental health question answering*. LREC-COLING 2024.
+- 认知扭曲检测：Sage, A. 等 (2025). *A survey of cognitive distortion detection and classification in NLP*. EMNLP 2025 Findings.
 - ACT（接纳承诺疗法）—— Hayes 等人
 - DBT（辩证行为疗法）—— Marsha Linehan
 - 正念 / MBSR —— Jon Kabat-Zinn
+
+### AI 心理陪伴伦理与安全框架
+
+- **伦理风险框架**：Iftikhar, Z. 等 (2025). *How LLM counselors violate ethical standards in mental health practice: A practitioner-informed framework*. AIES Conference (AAAI/ACM).
+- **AI 安全等级**：Brenner, G. H. (2025). *Toward a framework for AI safety in mental health: AI Safety Levels for Mental Health (ASL-MH)*. Neuromodec.
+- **APA 健康咨询**：American Psychological Association (2025). *Health advisory: Use of generative AI chatbots and wellness applications for mental health*.
+- **AI 安全训练临床危害** (2026). *AI safety training can be clinically harmful*. arXiv:2604.23445.
 
 ### 灵感与方法论
 

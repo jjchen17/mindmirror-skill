@@ -2,6 +2,22 @@
 
 > 本协议参考 Stanley & Brown (2012) Safety Planning Intervention 与国家卫健委《心理援助热线技术指南》。
 
+## 学术依据
+
+以下文献为本协议的设计决策提供科学支撑：
+
+| 文献 | 核心发现与本协议的关联 |
+|------|----------------------|
+| **Stanley, B. 等 (2018)** — *Comparison of the Safety Planning Intervention With Follow-up vs Usual Care*. JAMA Psychiatry. | SPI+（安全计划 + 电话随访）使自杀行为风险降低 **45%**，支持安全计划 + 真人随访的组合策略。 |
+| **Ernst, M. 等 (2024)** — *Ambulatory assessment of suicidal ambivalence*. Suicide and Life-Threatening Behavior. | "求死意愿"和"求生意愿"是两个独立构念（r = -0.60），矛盾性波动是干预窗口。支持"抓住矛盾作为活下来的力量"。 |
+| **INSIGHTFUL (2025)** — *Insight Generation through Clinical Annotation, Analysis, and Modeling of Suicide-Related Factors*. medRxiv. | 基于 500 份临床记录开发的 AI 模型显示，隐性、冲突性和模糊性自杀表达是最难识别的类型。支持否定语境识别和矛盾信号识别的必要性。 |
+| **Psychiatry Online (2025)** — *Evaluation of Alignment Between Large Language Models and Expert Clinicians in Suicide Risk Assessment*. | LLM 无法有意义地区分低、中、高风险等级。支持保守策略：**宁可过度转介也不遗漏**。 |
+| **Pichowicz, M. 等 (2025)** — *Zero of 29 AI chatbots provided adequate suicide-crisis responses*. Scientific Reports. | **29 款 AI 聊天机器人在危机响应测试中全部失败**。警示：绝不单独依赖 AI 处理危机。 |
+| **Rosebud CARE Benchmark (2025)** — LLM 危机评估基准。 | 最佳模型仍有约 **40% 关键失败率**，**86% 模型未能识别间接危机信号**。量化证明 AI 在危机识别上的局限性。 |
+| **中国 AI 聊天机器人监管 (2025)** — 国家网信办。 | 要求提及自杀时必须强制人工介入。支持"提及自杀→立即转介 12356"的设计决策。 |
+
+---
+
 ## 一、触发关键词（按危险等级）
 
 ### High（直接危险，立即转介）
@@ -37,6 +53,8 @@
 
 **这通常是真正的求救信号**，不要因为有"挂念"就放松警惕，但也不要因为有"想停"就直接走完整危机模板。
 
+> **学术支撑**：Ernst 等 (2024) 的实时监测研究发现，"求死意愿"和"求生意愿"并非简单对立（r = -0.60，而非 -1.0），两者可以同时高涨。这种"自杀矛盾性"（suicidal ambivalence）的波动本身就是最关键的干预窗口 —— 当求生意愿的火花还在时，它是活下来的力量。
+
 参考 D1-009 范例（references/d1-cases.md）。
 
 ## 二、识别陷阱（必须避免的误判）
@@ -49,6 +67,8 @@
 - 学术/纯讨论："心理学课上讲到 suicide ideation"
 
 匹配关键词后，**先看上下文**再决定是否进入危机协议。
+
+> **学术支撑**：INSIGHTFUL (2025) 对 500 份临床记录的分析显示，隐性、冲突性和模糊性自杀表达是最难被识别的类型。否定语境（如"我不想死"）和间接表达（如"不知道还能撑多久"）尤其容易被误判。Psychiatry Online (2025) 进一步证实，LLM 无法可靠区分低、中、高风险等级，因此在上下文存疑时，应采取保守策略：**宁可过度转介也不遗漏**。
 
 ## 三、响应模板
 
@@ -111,3 +131,5 @@
 - 是否漏了热线？→ 必须有 12356
 
 任何一项不达标，重写。
+
+> **警示依据**：Pichowicz 等 (2025) 测试了 29 款 AI 聊天机器人，**零款**提供了充分的危机响应。Rosebud CARE Benchmark (2025) 显示，即使表现最佳的模型仍有约 **40% 关键失败率**，**86% 的模型未能识别间接危机信号**。这些量化证据表明：AI 在危机识别和响应上存在系统性局限，**绝不能替代真人干预**。国家网信办 (2025) 亦明确要求，提及自杀时必须强制人工介入。
