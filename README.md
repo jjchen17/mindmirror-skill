@@ -458,10 +458,6 @@ Skill 设计了三档响应：
 
 ### 数据集参考
 
-- **SoulChatCorpus**：Chen, Y. 等 (2023). *SoulChatCorpus: A Chinese mental health conversation dataset*. [ModelScope](https://www.modelscope.cn/datasets/YIRONGCHEN/SoulChatCorpus/). 258K+ 轮多轮对话，13 个咨询主题（婚恋、情绪、人际、家庭、治疗、成长、行为、自我、社会、职场、心理学知识、未明确、性心理）。本项目未直接使用其对话数据，而是将其 12 主题分类作为「盲区地图」，系统性地指导 D1 案例从 48 条扩展至 66 条。
-
-### 数据集参考
-
 - **CPsyCoun**：Liu, Z. 等 (2023). *Towards Effective AI-Powered Depression Counseling: A Chinese Multi-turn Dialogue Dataset and Empirical Study*. EMNLP 2023. [GitHub](https://github.com/blcuicall/CPsyCoun). 华人心理咨询领域首个多轮对话数据集，32,130 条咨询对话，覆盖 11 个咨询主题。本项目参考其「咨询阶段识别」与「助人技术标注」体系，用于优化对话节奏与 CBT/ACT/DBT 技术介入时机判断。
 - **SoulChatCorpus**：Chen, Y. 等 (2023). *SoulChatCorpus: A Chinese mental health conversation dataset*. [ModelScope](https://www.modelscope.cn/datasets/YIRONGCHEN/SoulChatCorpus/). 258K+ 轮多轮对话，13 个咨询主题（婚恋、情绪、人际、家庭、治疗、成长、行为、自我、社会、职场、心理学知识、未明确、性心理）。本项目未直接使用其对话数据，而是将其 13 主题分类作为「盲区地图」，系统性地指导 D1 案例从 48 条扩展至 66 条。
 
