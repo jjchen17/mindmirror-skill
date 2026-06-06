@@ -2,10 +2,10 @@
 
 # MindMirror · 心镜
 
-**v0.2.1 · 一个尝试让 AI 助手的心理回复更"有人味"的 Skill**
+**v0.2.2 · 一个尝试让 AI 助手的心理回复更"有人味"的 Skill**
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.1--early-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.2--early-blue.svg)](CHANGELOG.md)
 [![Skill](https://img.shields.io/badge/format-Skill-purple.svg)](#skill-内部结构)
 [![Language](https://img.shields.io/badge/language-中文-red.svg)](#)
 
@@ -17,7 +17,7 @@
 
 ---
 
-> **🔬 声明**：这是 v0.2.1，一个经过 Agent 专家团队全面审查修正后的实验版本。D1 评估集已扩展到 48 条样本，但仍远未覆盖所有场景；回复风格在有限模型上验证过，跨模型一致性有待验证；危机识别词库也肯定有遗漏。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。D1 评估集已扩展到 48 条样本，但仍远未覆盖所有场景；回复风格在有限模型上验证过，跨模型一致性有待验证；危机识别词库也肯定有遗漏。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。
+> **🔬 声明**：这是 v0.2.2，一个经过 Agent 专家团队全面审查修正后的实验版本。D1 评估集已扩展到 66 条样本，但仍远未覆盖所有场景；回复风格在有限模型上验证过，跨模型一致性有待验证；危机识别词库也肯定有遗漏。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。
 
 ---
 
@@ -26,11 +26,11 @@
 **MindMirror** is an early-stage Skill that attempts to make AI assistants feel more human-like in Chinese emotional conversations.
 
 - **What it does**: When you talk about emotions, stress, grief, insomnia, self-doubt, or relationships, the assistant switches to a calibrated "human-feeling" reply style — leading with empathy, not advice; refusing to name therapy schools; defaulting to 2-4 short sentences.
-- **What's inside**: A minimal `SKILL.md` entry + 8 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, D-WAI digital working alliance 6-item scale, and 48 calibration dialogue cases).
+- **What's inside**: A minimal `SKILL.md` entry + 8 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, D-WAI digital working alliance 6-item scale, and 66 calibration dialogue cases).
 - **How to use**: Drop the folder into any Skill-capable agent's skills directory, OR paste the Markdown files directly into your favorite chatbot's system prompt. No backend, no API key, no data collection.
 - **Safety**: Crisis signals trigger the China hotline 12356 (24h, free) and other emergency numbers. Never diagnoses, never prescribes, never replaces professional therapy.
 - **License**: CC BY-NC-SA 4.0 (free to use and adapt, non-commercial, share-alike).
-- **Fair warning**: This is v0.2.1 — 48 calibration samples, limited model coverage, plenty of room for improvement. Bug reports and contributions welcome.
+- **Fair warning**: This is v0.2.2 — 66 calibration samples, limited model coverage, plenty of room for improvement. Bug reports and contributions welcome.
 
 ---
 
@@ -64,7 +64,7 @@
 它不是 App，不是网页，**不需要后端服务，不需要 API key，不收集任何数据**。
 它就是一份**尝试让 AI 助手在心理话题里表现得更自然的说明书 + 知识库**。
 
-> **说实话，它还远不够好**：D1 只有 48 条案例，很多常见的情绪场景（愤怒、羞耻、嫉妒、迷茫）都还没覆盖；回复风格只在有限模型上验证过；危机识别词库肯定有遗漏。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
+> **说实话，它还远不够好**：D1 只有 66 条案例，很多常见的情绪场景（愤怒、羞耻、嫉妒、迷茫）都还没覆盖；回复风格只在有限模型上验证过；危机识别词库肯定有遗漏。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
 
 > **Skill 是通用规范**：Skill 这种 "SKILL.md + references/ 按需读取" 的组织方式现在已经被多个 Agent 平台和客户端支持。本仓库不绑定任何特定厂商，只要你的 Agent 能读 Markdown、能按描述路由文件，就能用。
 
@@ -153,7 +153,7 @@ git clone https://github.com/jjchen17/mindmirror-skill.git <SKILLS_DIR>/mindmirr
 | 让用户能做自评筛查 | 再追加 [assessment-scales.md](references/assessment-scales.md) |
 | 用户求方法时给具体工具 | 再追加 [techniques.md](references/techniques.md) |
 | 做安全计划引导 | 再追加 [safety-plan.md](references/safety-plan.md) |
-| 校准你自己模型的回复品味 | 用 [d1-cases.md](references/d1-cases.md) 的 48 条对照做 few-shot 或离线评测 |
+| 校准你自己模型的回复品味 | 用 [d1-cases.md](references/d1-cases.md) 的 66 条对照做 few-shot 或离线评测 |
 | 测试多轮对话稳定性 | 用 [d2-evaluation.md](references/d2-evaluation.md) 的 9 组场景测 3-10 轮风格漂移 |
 
 也可以把所有 references 一次性丢进向量库做 RAG，按用户问题自动召回。
@@ -182,7 +182,7 @@ mindmirror-skill/
     ├── assessment-scales.md    # PHQ-9 / GAD-7 / PSS-10
     ├── self-eval-rubric.md     # 隐藏自评 5 维 × 0-3 分
     ├── dta-assessment.md       # D-WAI 数字对话联盟 6 题中文适配版
-    ├── d1-cases.md             # 48 条 good/bad 校准案例
+    ├── d1-cases.md             # 66 条 good/bad 校准案例
     └── d2-evaluation.md        # 9 组多轮对话稳定性测试
 ```
 
@@ -250,7 +250,7 @@ mindmirror-skill/
 | **references/assessment-scales.md** | PHQ-9（9 题 + Q9 危机标记）· GAD-7（7 题）· PSS-10（10 题 + 反向计分）· 中文分层阈值（黄/橙/红）+ 解读规则 | 用户想自评时 |
 | **references/dta-assessment.md** | D-WAI 数字对话联盟 6 题中文适配版：对话式施测示范 + 联盟质量检测 | 对话进行 3-5 轮后检测联盟质量时 |
 | **references/self-eval-rubric.md** | 6 维 × 0-3 分的隐藏自评 Rubric + 联盟破裂修复 + 8 项常见重写动作 + 一句话验证 | 每次输出前内部使用 |
-| **references/d1-cases.md** | 48 条 good/bad 对照（新增：躯体化窗口、网络隐语危机、青少年攒药、ACT 价值澄清、DBT 急性场景、CBT 认知重估、正念 grounding 等） | 需要校准品味时 |
+| **references/d1-cases.md** | 66 条 good/bad 对照（覆盖：抑郁、焦虑、压力、丧亲、失眠、学业、职场、亲密关系、自我否定、性心理、行为问题、治疗疑问、社会应激、成长迷茫、愤怒、羞耻、嫉妒、存在迷茫等 18 个主题） | 需要校准品味时 |
 | **references/d2-evaluation.md** | 9 组多轮对话稳定性测试（3-10 轮），覆盖学业压力、关系冲突、失眠躯体化、丧亲、自我否定等场景 | 测试多轮对话风格漂移时 |
 
 **设计原则**：主 `SKILL.md` 保持精简，详细资源按需 Read，避免上下文溢出。
@@ -283,13 +283,13 @@ mindmirror-skill/
 
 ### D1 离线评测（小样本，仅供参考）
 
-目前仅基于 48 条 good/bad 黄金对照样本做的盲评：
+目前仅基于 66 条 good/bad 黄金对照样本做的盲评：
 
 - **good 回复**：均值 9.27 / 12
 - **bad 回复**：均值 5.0 / 12
 - **区分度**：4.27（>4 视为有效）
 
-35 条样本仍然不够，这个分数只能说明"方向没走反"，远不能代表真实场景的表现。**D2 多轮评估集**（3-10 轮的完整对话稳定性测试）还在计划中，欢迎一起设计。
+66 条样本仍然不够，这个分数只能说明"方向没走反"，远不能代表真实场景的表现。**D2 多轮评估集**（3-10 轮的完整对话稳定性测试）还在计划中，欢迎一起设计。
 
 ---
 
@@ -450,6 +450,10 @@ Skill 设计了三档响应：
 - **APA 健康咨询**：American Psychological Association (2025). *Health advisory: Use of generative AI chatbots and wellness applications for mental health*.
 - **AI 安全训练临床危害** (2026). *AI safety training can be clinically harmful*. arXiv:2604.23445.
 
+### 数据集参考
+
+- **SoulChatCorpus**：Chen, Y. 等 (2023). *SoulChatCorpus: A Chinese mental health conversation dataset*. [ModelScope](https://www.modelscope.cn/datasets/YIRONGCHEN/SoulChatCorpus/). 258K+ 轮多轮对话，13 个咨询主题（婚恋、情绪、人际、家庭、治疗、成长、行为、自我、社会、职场、心理学知识、未明确、性心理）。本项目未直接使用其对话数据，而是将其 12 主题分类作为「盲区地图」，系统性地指导 D1 案例从 48 条扩展至 66 条。
+
 ### 灵感与方法论
 
 - **D1 黄金对话集设计**：参考 [agiforgood/agent-system](https://github.com/agiforgood/agent-system) 的 D1 评估集思路
@@ -458,7 +462,7 @@ Skill 设计了三档响应：
 
 ## 版本与许可
 
-- **版本**：v0.2.1（2026-06-06，基于 Agent 专家团队全面审查修正）
+- **版本**：v0.2.2（2026-06-06，D1 评估集从 48 条扩展至 66 条）
 - **变更记录**：见 [CHANGELOG.md](CHANGELOG.md)
 - **许可**：[CC BY-NC-SA 4.0](LICENSE)
   - ✅ 自由阅读、修改、再分发

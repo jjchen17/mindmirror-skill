@@ -95,7 +95,7 @@ description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰
 | 用户在自伤/自杀意念边缘但相对稳定，想做自助计划 | [references/safety-plan.md](references/safety-plan.md) — Stanley & Brown 6 步 |
 | 用户主动问"我是不是抑郁/焦虑了" 或想自评 | [references/assessment-scales.md](references/assessment-scales.md) — PHQ-9/GAD-7/PSS-10 题干与解读 |
 | 对话进行 3-5 轮后，想检测联盟质量 | [references/dta-assessment.md](references/dta-assessment.md) — D-WAI 数字对话联盟 6 题快速检测 |
-| 你想自检某条回复是否"够人味" | [references/d1-cases.md](references/d1-cases.md) — 48 条 good/bad 对照 |
+| 你想自检某条回复是否"够人味" | [references/d1-cases.md](references/d1-cases.md) — 66 条 good/bad 对照 |
 | 你想做隐藏式自评（输出前自评，差则重写） | [references/self-eval-rubric.md](references/self-eval-rubric.md) — 6 维 × 0-3 分 + 联盟破裂修复 |
 | 你想测试多轮对话稳定性 | [references/d2-evaluation.md](references/d2-evaluation.md) — 9 组 3-10 轮对话测试 |
 | 出现危机信号，需完整响应模板 | [references/crisis-protocol.md](references/crisis-protocol.md) — 三层检测架构 + 响应模板 A/B/C |
