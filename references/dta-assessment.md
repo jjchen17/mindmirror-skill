@@ -1,5 +1,7 @@
-# 数字治疗联盟快速检测（D-WAI 中文适配版）
+# 数字对话联盟快速检测（D-WAI 中文适配版）
 
+> ⚠️ **重要声明**：本文件仅用于评估 AI 对话陪伴中的"信任关系质量"，**不构成治疗联盟评估**。AI 不是治疗师，用户与 AI 之间不存在真实的咨访关系。
+>
 > **重要**：本资源为 D-WAI（Digital Working Alliance Inventory）的中文语境适配版本，**未经正式心理测量学验证**，仅用于 MindMirror Skill 内部校准参考。学术使用时请联系原作者 Goldberg 等 (2022) 获取正式授权。
 >
 > 原始文献：Goldberg, S. B., Baldwin, S. A., Riordan, K. M., Torous, J., Dahl, C. J., Davidson, R. J., & Hirshberg, M. J. (2022). Alliance with an unguided smartphone app: Validation of the Digital Working Alliance Inventory. *Assessment*, 29(6), 1331–1345. https://doi.org/10.1177/10731911211015310

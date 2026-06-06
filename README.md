@@ -2,10 +2,10 @@
 
 # MindMirror · 心镜
 
-**v0.1.0 · 一个尝试让 AI 助手的心理回复更"有人味"的 Skill**
+**v0.2.0 · 一个尝试让 AI 助手的心理回复更"有人味"的 Skill**
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0--early-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0--early-blue.svg)](CHANGELOG.md)
 [![Skill](https://img.shields.io/badge/format-Skill-purple.svg)](#skill-内部结构)
 [![Language](https://img.shields.io/badge/language-中文-red.svg)](#)
 
@@ -17,7 +17,7 @@
 
 ---
 
-> **🔬 初版声明**：这是 v0.1.0，一个实验性的起点。D1 评估集只有 20 条样本，很多场景尚未覆盖；回复风格在单一类模型上校准过，跨模型的一致性还有待验证；危机识别词库也远不全面。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。
+> **🔬 声明**：这是 v0.2.0，一个基于 200+ 次学术搜索系统性优化后的实验版本。D1 评估集已扩展到 35 条样本，但仍远未覆盖所有场景；回复风格在有限模型上验证过，跨模型一致性有待验证；危机识别词库也肯定有遗漏。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。
 
 ---
 
@@ -26,11 +26,11 @@
 **MindMirror** is an early-stage Skill that attempts to make AI assistants feel more human-like in Chinese emotional conversations.
 
 - **What it does**: When you talk about emotions, stress, grief, insomnia, self-doubt, or relationships, the assistant switches to a calibrated "human-feeling" reply style — leading with empathy, not advice; refusing to name therapy schools; defaulting to 2-4 short sentences.
-- **What's inside**: A minimal `SKILL.md` entry + 7 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, and 15 calibration dialogue cases).
+- **What's inside**: A minimal `SKILL.md` entry + 8 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, D-WAI digital working alliance 6-item scale, and 35 calibration dialogue cases).
 - **How to use**: Drop the folder into any Skill-capable agent's skills directory, OR paste the Markdown files directly into your favorite chatbot's system prompt. No backend, no API key, no data collection.
 - **Safety**: Crisis signals trigger the China hotline 12356 (24h, free) and other emergency numbers. Never diagnoses, never prescribes, never replaces professional therapy.
 - **License**: CC BY-NC-SA 4.0 (free to use and adapt, non-commercial, share-alike).
-- **Fair warning**: This is v0.1.0 — 15 calibration samples, limited model coverage, plenty of room for improvement. Bug reports and contributions welcome.
+- **Fair warning**: This is v0.2.0 — 35 calibration samples, limited model coverage, plenty of room for improvement. Bug reports and contributions welcome.
 
 ---
 
@@ -64,7 +64,7 @@
 它不是 App，不是网页，**不需要后端服务，不需要 API key，不收集任何数据**。
 它就是一份**尝试让 AI 助手在心理话题里表现得更自然的说明书 + 知识库**。
 
-> **说实话，它还远不够好**：D1 只有 20 条案例，很多常见的情绪场景（愤怒、羞耻、嫉妒、迷茫）都还没覆盖；回复风格只在有限模型上验证过；危机识别词库肯定有遗漏。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
+> **说实话，它还远不够好**：D1 只有 35 条案例，很多常见的情绪场景（愤怒、羞耻、嫉妒、迷茫）都还没覆盖；回复风格只在有限模型上验证过；危机识别词库肯定有遗漏。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
 
 > **Skill 是通用规范**：Skill 这种 "SKILL.md + references/ 按需读取" 的组织方式现在已经被多个 Agent 平台和客户端支持。本仓库不绑定任何特定厂商，只要你的 Agent 能读 Markdown、能按描述路由文件，就能用。
 
@@ -80,7 +80,7 @@
 - 在用户只是想倾诉时强推"积极思维"
 - 在用户发出明确危机信号时丢一个热线电话就结束
 
-MindMirror 用 **7 份精心编排的 Markdown** 尝试矫正这些坏习惯：
+MindMirror 用 **8 份精心编排的 Markdown** 尝试矫正这些坏习惯：
 
 | 用户场景 | Skill 自动做的事 |
 |---------|---------------|
@@ -106,10 +106,18 @@ MindMirror 用 **7 份精心编排的 Markdown** 尝试矫正这些坏习惯：
 
 ### ❌ 不适合 / 不能替代
 
+> ⚠️ **再次提醒**：以下所有限制均基于同一前提 —— 这是 AI 陪伴，不是专业心理健康服务。
+
 - **不是诊断工具**：自评结果是状态参考，不是 DSM-5 / ICD-11 诊断
 - **不是治疗**：不能替代心理咨询师、精神科医生、住院治疗
 - **不是危机干预热线**：即时危险请直接拨 **12356 / 120 / 110**
 - **不适合急性精神病性发作、躁狂发作、严重物质依赖、严重 ED** —— 需要面对面的专业评估
+- **不适合未成年人独自深度使用** —— 建议告知家长或学校心理老师，优先使用 **12355** 青少年专线
+- **不适合正在调整精神类药物期间** —— 药物副作用与情绪变化需由医生面诊评估
+- **不适合创伤后急性期（72 小时内）** —— 重大事故/灾害后的急性应激反应需专业危机干预
+- **不适合未成年人独自深度使用** —— 建议告知家长或学校心理老师，优先使用 **12355** 青少年专线
+- **不适合正在调整精神类药物期间** —— 药物副作用与情绪变化需由医生面诊评估
+- **不适合创伤后急性期（72 小时内）** —— 重大事故/灾害后的急性应激反应需专业危机干预
 
 ---
 
@@ -148,7 +156,7 @@ git clone https://github.com/jjchen17/mindmirror-skill.git <SKILLS_DIR>/mindmirr
 | 让用户能做自评筛查 | 再追加 [assessment-scales.md](references/assessment-scales.md) |
 | 用户求方法时给具体工具 | 再追加 [techniques.md](references/techniques.md) |
 | 做安全计划引导 | 再追加 [safety-plan.md](references/safety-plan.md) |
-| 校准你自己模型的回复品味 | 用 [d1-cases.md](references/d1-cases.md) 的 20 条对照做 few-shot 或离线评测 |
+| 校准你自己模型的回复品味 | 用 [d1-cases.md](references/d1-cases.md) 的 35 条对照做 few-shot 或离线评测 |
 
 也可以把所有 references 一次性丢进向量库做 RAG，按用户问题自动召回。
 
@@ -174,8 +182,9 @@ mindmirror-skill/
     ├── safety-plan.md          # Stanley & Brown 2012 六步法
     ├── techniques.md           # CBT / ACT / DBT / 正念速查
     ├── assessment-scales.md    # PHQ-9 / GAD-7 / PSS-10
-    ├── self-eval-rubric.md     # 隐藏自评 4 维 × 0-3 分
-    └── d1-cases.md             # 20 条 good/bad 校准案例
+    ├── self-eval-rubric.md     # 隐藏自评 5 维 × 0-3 分
+    ├── dta-assessment.md       # D-WAI 数字对话联盟 6 题中文适配版
+    └── d1-cases.md             # 35 条 good/bad 校准案例
 ```
 
 ---
@@ -239,9 +248,10 @@ mindmirror-skill/
 | **references/crisis-protocol.md** | High/Medium/矛盾三档关键词 · 识别陷阱（否定/第三方/学术）· 危机回复模板 A/B/C · 6 个国内热线 | 检测到危机信号时 |
 | **references/safety-plan.md** | Stanley & Brown (2012) 六步法：预警信号 → 内部应对 → 转移注意人/地 → 求助的人 → 专业机构 → means restriction | 用户想做安全计划时 |
 | **references/techniques.md** | CBT 十大认知扭曲 + 苏格拉底式提问 · ACT 价值澄清 / 认知解离 / 承诺行动 · DBT DEARMAN / TIPP · 正念 4-7-8 / 5-4-3-2-1 / RAIN / 慈心 | 用户明确求方法时 |
-| **references/assessment-scales.md** | PHQ-9（9 题 + Q9 危机标记）· GAD-7（7 题）· PSS-10（10 题 + 反向计分）· 完整阈值表 + 解读规则 | 用户想自评时 |
-| **references/self-eval-rubric.md** | 4 维 × 0-3 分的隐藏自评 Rubric + 8 项常见重写动作 + 一句话验证（"被截屏给朋友看会说'真懂'还是'背稿子'？"） | 每次输出前内部使用 |
-| **references/d1-cases.md** | 20 条 good/bad 对照（学业、失眠、亲密关系、自我否定、职业倦怠、考试、丧亲、社交焦虑、矛盾自伤、紧急危机、反越狱、求方法、短消息、未成年、日常分享、面子受损、家庭期望、合群压力、懂事代价、社会比较） | 需要校准品味时 |
+| **references/assessment-scales.md** | PHQ-9（9 题 + Q9 危机标记）· GAD-7（7 题）· PSS-10（10 题 + 反向计分）· 中文分层阈值（黄/橙/红）+ 解读规则 | 用户想自评时 |
+| **references/dta-assessment.md** | D-WAI 数字对话联盟 6 题中文适配版：对话式施测示范 + 联盟质量检测 | 对话进行 3-5 轮后检测联盟质量时 |
+| **references/self-eval-rubric.md** | 5 维 × 0-3 分的隐藏自评 Rubric + 联盟破裂修复 + 8 项常见重写动作 + 一句话验证 | 每次输出前内部使用 |
+| **references/d1-cases.md** | 35 条 good/bad 对照（新增：躯体化窗口、网络隐语危机、青少年攒药、ACT 价值澄清、DBT 急性场景、CBT 认知重估、正念 grounding 等） | 需要校准品味时 |
 
 **设计原则**：主 `SKILL.md` 保持精简，详细资源按需 Read，避免上下文溢出。
 
@@ -260,7 +270,7 @@ mindmirror-skill/
 |------|------|----------|
 | **Empathy** | 共情准确度 | 命中字里行间没说出来的那部分 |
 | **Positive Regard** | 无评判接纳 | 让人感到"我这样也可以" |
-| **Alliance** | 咨访同盟 | "我们一起看看"，不是"我教你" |
+| **Alliance** | 对话同盟 | "我们一起看看"，不是"我教你" |
 | **Goal Consensus** | 目标跟随 | 用户想倾诉就别推方法；用户求方法就别绕弯 |
 
 ### 关键约束
@@ -273,13 +283,13 @@ mindmirror-skill/
 
 ### D1 离线评测（小样本，仅供参考）
 
-目前仅基于 20 条 good/bad 黄金对照样本做的盲评：
+目前仅基于 35 条 good/bad 黄金对照样本做的盲评：
 
 - **good 回复**：均值 9.27 / 12
 - **bad 回复**：均值 5.0 / 12
 - **区分度**：4.27（>4 视为有效）
 
-20 条样本还是太小，这个分数只能说明"方向没走反"，远不能代表真实场景的表现。**D2 多轮评估集**（3-10 轮的完整对话稳定性测试）还在计划中，欢迎一起设计。
+35 条样本仍然不够，这个分数只能说明"方向没走反"，远不能代表真实场景的表现。**D2 多轮评估集**（3-10 轮的完整对话稳定性测试）还在计划中，欢迎一起设计。
 
 ---
 
@@ -290,6 +300,7 @@ mindmirror-skill/
 3. **不替代专业治疗**：所有 PHQ-9 / GAD-7 结果都附"这不是诊断，只是当下状态的一个参考"。
 4. **危机必转介**：出现明确自伤/自杀计划时，第一时间提供 12356 等热线，并优先稳住当下。
 5. **隐私**：对话内容是否被你的 AI 服务商或客户端记录、留存，**取决于你自己的订阅条款与客户端设置**——本 Skill 不收集任何数据。
+6. **按原样提供，不承担责任**：本 Skill 按"原样"（AS IS）提供，开发者不对因使用本 Skill 而延误专业治疗、AI 未能识别危机信号、或依赖量表结果自我诊断所造成的任何后果承担责任。详见 [DISCLAIMER.md](DISCLAIMER.md)。
 
 ### ⚠️ 即时危险
 
@@ -417,12 +428,13 @@ Skill 设计了三档响应：
 
 ## 版本与许可
 
-- **版本**：v0.1.0（2026-06-06 首发）
+- **版本**：v0.2.0（2026-06-06，基于 200+ 次学术搜索的系统优化）
 - **变更记录**：见 [CHANGELOG.md](CHANGELOG.md)
 - **许可**：[CC BY-NC-SA 4.0](LICENSE)
   - ✅ 自由阅读、修改、再分发
   - ✅ 需署名（原作者 + 本仓库链接）
   - ❌ 不可用于商业目的
+  - ❌ 不可作为临床诊断或治疗工具使用（无论是否商业）
   - 🔁 衍生作品须采用相同协议
 
 ### 题干版权说明
@@ -476,6 +488,6 @@ Skill 设计了三档响应：
 
 **愿这个不成熟的起点，能吸引更多比我有经验的人一起把它变好。**
 
-— MindMirror · 心镜 · v0.1.0
+— MindMirror · 心镜 · v0.2.0
 
 </div>
