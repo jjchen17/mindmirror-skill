@@ -30,7 +30,7 @@
 - **references/techniques.md**：CBT 十大认知扭曲 + 苏格拉底式提问 / ACT 价值澄清 / DBT DEARMAN + TIPP / 正念 4-7-8 + 5-4-3-2-1 + RAIN + 慈心
 - **references/assessment-scales.md**：PHQ-9（含 Q9 危机标记）、GAD-7、PSS-10（含反向计分公式）完整题目 + 阈值 + 解读
 - **references/self-eval-rubric.md**：输出前隐藏自评 4 维 × 0-3 分 + 8 项常见重写动作
-- **references/d1-cases.md**：15 条 good/bad 校准案例
+- **references/d1-cases.md**：20 条 good/bad 校准案例
 
 ### 安全设计
 
