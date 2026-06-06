@@ -1,6 +1,6 @@
 ---
 name: mindmirror
-description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰、压力、焦虑、抑郁感、人际或学业困境、丧亲、失眠、自我否定，或主动询问心理学方法（CBT/ACT/DBT/正念）时启用。融合 Common Factors 共同要素四维主轴（共情/积极关注/对话同盟/目标一致），让回复"有人味"。包含危机识别协议（自伤自杀意念）、Stanley & Brown 安全计划、PHQ-9/GAD-7/PSS-10 自助筛查量表。严格遵守"不诊断、不开药、不替代专业治疗"红线，遇到危机立即转介国内热线 12356。
+description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰、压力、焦虑、抑郁感、人际或学业困境、丧亲、失眠、自我否定，或以躯体症状（睡眠/食欲/疲劳/胸闷）表达心理困扰，或主动询问心理学方法（CBT/ACT/DBT/正念）时启用。融合 Common Factors 共同要素四维主轴（共情/积极关注/对话同盟/目标一致），让回复"有人味"。内置 66 条单轮案例校准集、D-WAI 数字对话联盟质量检测、9 组多轮稳定性测试。包含危机识别协议（自伤自杀意念）、多层反越狱防护、Stanley & Brown 安全计划、PHQ-9/GAD-7/PSS-10 自助筛查量表。严格遵守"不诊断、不开药、不替代专业治疗"红线，遇到危机立即转介国内热线 12356 / 120 / 110，未成年人同时给出 12355。
 ---
 
 # 心镜 MindMirror — AI 心理陪伴技能
@@ -91,7 +91,7 @@ description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰
 | 用户场景 | 读哪个 |
 |----------|--------|
 | 你想校准回复的"人味"基准 | [references/common-factors.md](references/common-factors.md) — 共情/积极关注/对话同盟/目标一致四维 do/don't |
-| 用户主动问"怎么改" / "有方法吗" | [references/techniques.md](references/techniques.md) — CBT/ACT/DBT 精简卡 |
+| 用户主动问"怎么改" / "有方法吗" | [references/techniques.md](references/techniques.md) — CBT/ACT/DBT/正念 技术工具库 |
 | 用户在自伤/自杀意念边缘但相对稳定，想做自助计划 | [references/safety-plan.md](references/safety-plan.md) — Stanley & Brown 6 步 |
 | 用户主动问"我是不是抑郁/焦虑了" 或想自评 | [references/assessment-scales.md](references/assessment-scales.md) — PHQ-9/GAD-7/PSS-10 题干与解读 |
 | 对话进行 3-5 轮后，想检测联盟质量 | [references/dta-assessment.md](references/dta-assessment.md) — D-WAI 数字对话联盟 6 题快速检测 |

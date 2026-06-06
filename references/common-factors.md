@@ -232,6 +232,8 @@
 - Wampold, B. E. (2015). *How important are the common factors in psychotherapy? An update.* World Psychiatry, 14(3), 270–277.
 - Cuijpers, P., Reijnders, M., & Huibers, M. J. H. (2019). *The role of common factors in psychotherapy outcomes.* Annual Review of Clinical Psychology, 15, 207–231. — 对共同要素与特定技术之争进行了迄今最全面的综述，结论是没有任何共同要素或特定因素达到经验验证的工作机制标准，但共同要素仍是最有前景的方向。
 - Johannsen, M., et al. (2022). *Mediators of Acceptance and Mindfulness-Based Therapies.* Clinical Psychology Review. — 在 ACT 等新兴疗法中，共同要素仍被确认为关键机制变量。
+- Raimi, D., et al. (2025). *Judgmental Bot: AI perceived as more judgmental than humans*. — AI 被感知为比人类更具评判性，机械回应被解读为冷漠和草率的评判。
+- OpenAI (2025). GPT-4o update notes — 承认模型"太谄媚、太烦人"，过度迎合验证扭曲认知、助长愤怒。
 - 灵感参考：agiforgood/agent-system 齐家 AI 教练 P1-P4 主轴设计
 
 ### AI 共情研究

@@ -26,7 +26,7 @@
 **MindMirror** is an early-stage Skill that attempts to make AI assistants feel more human-like in Chinese emotional conversations.
 
 - **What it does**: When you talk about emotions, stress, grief, insomnia, self-doubt, or relationships, the assistant switches to a calibrated "human-feeling" reply style — leading with empathy, not advice; refusing to name therapy schools; defaulting to 2-4 short sentences.
-- **What's inside**: A minimal `SKILL.md` entry + 8 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, D-WAI digital working alliance 6-item scale, and 66 calibration dialogue cases).
+- **What's inside**: A minimal `SKILL.md` entry + 9 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, D-WAI digital working alliance 6-item scale, 66 calibration dialogue cases, and 9 multi-round stability tests).
 - **How to use**: Drop the folder into any Skill-capable agent's skills directory, OR paste the Markdown files directly into your favorite chatbot's system prompt. No backend, no API key, no data collection.
 - **Safety**: Crisis signals trigger the China hotline 12356 (24h, free) and other emergency numbers. Never diagnoses, never prescribes, never replaces professional therapy.
 - **License**: CC BY-NC-SA 4.0 (free to use and adapt, non-commercial, share-alike).
@@ -64,7 +64,7 @@
 它不是 App，不是网页，**不需要后端服务，不需要 API key，不收集任何数据**。
 它就是一份**尝试让 AI 助手在心理话题里表现得更自然的说明书 + 知识库**。
 
-> **说实话，它还远不够好**：D1 只有 66 条案例，很多常见的情绪场景（愤怒、羞耻、嫉妒、迷茫）都还没覆盖；回复风格只在有限模型上验证过；危机识别词库肯定有遗漏。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
+> **说实话，它还远不够好**：D1 虽有 66 条案例，但跨模型一致性、危机边界 case、长对话稳定性都还没充分验证。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
 
 > **Skill 是通用规范**：Skill 这种 "SKILL.md + references/ 按需读取" 的组织方式现在已经被多个 Agent 平台和客户端支持。本仓库不绑定任何特定厂商，只要你的 Agent 能读 Markdown、能按描述路由文件，就能用。
 
@@ -266,6 +266,8 @@ mindmirror-skill/
 
 ### 四个维度（依据 Norcross & Lambert 2018 共同要素元分析）
 
+Common Factors 理论框架本身为 **4 维**（Empathy / Positive Regard / Alliance / Goal Consensus）。self-eval-rubric.md 在此基础上扩展为 **6 维 + 联盟破裂修复**（增加 authenticity 真实感 和 progression 渐进性 两个执行维度），用于输出前质量自检。
+
 | 维度 | 中文 | 操作化定义 |
 |------|------|----------|
 | **Empathy** | 共情准确度 | 命中字里行间没说出来的那部分 |
@@ -454,6 +456,11 @@ Skill 设计了三档响应：
 
 - **SoulChatCorpus**：Chen, Y. 等 (2023). *SoulChatCorpus: A Chinese mental health conversation dataset*. [ModelScope](https://www.modelscope.cn/datasets/YIRONGCHEN/SoulChatCorpus/). 258K+ 轮多轮对话，13 个咨询主题（婚恋、情绪、人际、家庭、治疗、成长、行为、自我、社会、职场、心理学知识、未明确、性心理）。本项目未直接使用其对话数据，而是将其 12 主题分类作为「盲区地图」，系统性地指导 D1 案例从 48 条扩展至 66 条。
 
+### 数据集参考
+
+- **CPsyCoun**：Liu, Z. 等 (2023). *Towards Effective AI-Powered Depression Counseling: A Chinese Multi-turn Dialogue Dataset and Empirical Study*. EMNLP 2023. [GitHub](https://github.com/blcuicall/CPsyCoun). 华人心理咨询领域首个多轮对话数据集，32,130 条咨询对话，覆盖 11 个咨询主题。本项目参考其「咨询阶段识别」与「助人技术标注」体系，用于优化对话节奏与 CBT/ACT/DBT 技术介入时机判断。
+- **SoulChatCorpus**：Chen, Y. 等 (2023). *SoulChatCorpus: A Chinese mental health conversation dataset*. [ModelScope](https://www.modelscope.cn/datasets/YIRONGCHEN/SoulChatCorpus/). 258K+ 轮多轮对话，13 个咨询主题（婚恋、情绪、人际、家庭、治疗、成长、行为、自我、社会、职场、心理学知识、未明确、性心理）。本项目未直接使用其对话数据，而是将其 13 主题分类作为「盲区地图」，系统性地指导 D1 案例从 48 条扩展至 66 条。
+
 ### 灵感与方法论
 
 - **D1 黄金对话集设计**：参考 [agiforgood/agent-system](https://github.com/agiforgood/agent-system) 的 D1 评估集思路
@@ -483,7 +490,7 @@ Skill 设计了三档响应：
 
 说实话，一个人打磨这东西很容易掉进"自我感觉良好"的陷阱。以下是我知道但还没搞定的事，如果你愿意搭把手，非常感激：
 
-- **D1 案例太薄**：48 条还是远远不够。你有没有遇到过"AI 在这件事上完全接不住"的瞬间？记下来，补一条 good/bad 对照
+- **D1 案例太薄**：66 条仍然远远不够。你有没有遇到过"AI 在这件事上完全接不住"的瞬间？记下来，补一条 good/bad 对照
 - **危机识别词库肯定有漏**：尤其是方言化表达、青少年群体用词、男性特有的求助信号
 - **多轮对话稳定性未知**：一段对话拉长到 6-10 轮，风格会不会慢慢滑回"说教模式"？需要有人一起测
 - **跨模型验证**：目前只在有限模型上验证过，换其他模型表现什么样我不知道
@@ -522,6 +529,6 @@ Skill 设计了三档响应：
 
 **愿这个不成熟的起点，能吸引更多比我有经验的人一起把它变好。**
 
-— MindMirror · 心镜 · v0.2.1
+— MindMirror · 心镜 · v0.2.2
 
 </div>
