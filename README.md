@@ -17,7 +17,7 @@
 
 ---
 
-> **🔬 声明**：这是 v0.2.2，一个经过 Agent 专家团队全面审查修正后的实验版本。D1 评估集已扩展到 66 条样本，但仍远未覆盖所有场景；回复风格在有限模型上验证过，跨模型一致性有待验证；危机识别词库也肯定有遗漏。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。
+> **🔬 声明**：这是 v0.2.2，一个经过 Agent 专家团队全面审查修正后的实验版本。D1 评估集已扩展到 69 条样本，但仍远未覆盖所有场景；回复风格在有限模型上验证过，跨模型一致性有待验证；危机识别词库也肯定有遗漏。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。
 
 ---
 
@@ -26,11 +26,11 @@
 **MindMirror** is an early-stage Skill that attempts to make AI assistants feel more human-like in Chinese emotional conversations.
 
 - **What it does**: When you talk about emotions, stress, grief, insomnia, self-doubt, or relationships, the assistant switches to a calibrated "human-feeling" reply style — leading with empathy, not advice; refusing to name therapy schools; defaulting to 2-4 short sentences.
-- **What's inside**: A minimal `SKILL.md` entry + 9 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, D-WAI digital working alliance 6-item scale, 66 calibration dialogue cases, and 9 multi-round stability tests).
+- **What's inside**: A minimal `SKILL.md` entry + 12 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, D-WAI digital working alliance 6-item scale, 69 calibration dialogue cases, and 11 multi-round stability tests).
 - **How to use**: Drop the folder into any Skill-capable agent's skills directory, OR paste the Markdown files directly into your favorite chatbot's system prompt. No backend, no API key, no data collection.
 - **Safety**: Crisis signals trigger the China hotline 12356 (24h, free) and other emergency numbers. Never diagnoses, never prescribes, never replaces professional therapy.
 - **License**: CC BY-NC-SA 4.0 (free to use and adapt, non-commercial, share-alike).
-- **Fair warning**: This is v0.2.2 — 66 calibration samples, limited model coverage, plenty of room for improvement. Bug reports and contributions welcome.
+- **Fair warning**: This is v0.2.2 — 69 calibration samples, limited model coverage, plenty of room for improvement. Bug reports and contributions welcome.
 
 ---
 
@@ -66,7 +66,7 @@
 
 > **⚠️ 重要提醒：AI 不能替代心理咨询师、精神科医生或任何专业心理健康服务。如果你正在经历严重的心理困扰或危机，请立即拨打 12356 寻求专业帮助。**
 >
-> **说实话，它还远不够好**：D1 虽有 66 条案例，但跨模型一致性、危机边界 case、长对话稳定性都还没充分验证。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
+> **说实话，它还远不够好**：D1 虽有 69 条案例，但跨模型一致性、危机边界 case、长对话稳定性都还没充分验证。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
 
 > **Skill 是通用规范**：Skill 这种 "SKILL.md + references/ 按需读取" 的组织方式现在已经被多个 Agent 平台和客户端支持。本仓库不绑定任何特定厂商，只要你的 Agent 能读 Markdown、能按描述路由文件，就能用。
 
@@ -82,7 +82,7 @@
 - 在用户只是想倾诉时强推"积极思维"
 - 在用户发出明确危机信号时丢一个热线电话就结束
 
-MindMirror 用 **9 份精心编排的 Markdown** 尝试矫正这些坏习惯：
+MindMirror 用 **12 份精心编排的 Markdown** 尝试矫正这些坏习惯：
 
 | 用户场景 | Skill 自动做的事 |
 |---------|---------------|
@@ -157,8 +157,8 @@ git clone https://github.com/jjchen17/mindmirror-skill.git <SKILLS_DIR>/mindmirr
 | 让用户能做自评筛查 | 再追加 [assessment-scales.md](references/assessment-scales.md) |
 | 用户求方法时给具体工具 | 再追加 [techniques.md](references/techniques.md) |
 | 做安全计划引导 | 再追加 [safety-plan.md](references/safety-plan.md) |
-| 校准你自己模型的回复品味 | 用 [d1-cases.md](references/d1-cases.md) 的 66 条对照做 few-shot 或离线评测 |
-| 测试多轮对话稳定性 | 用 [d2-evaluation.md](references/d2-evaluation.md) 的 9 组场景测 3-10 轮风格漂移 |
+| 校准你自己模型的回复品味 | 用 [d1-cases.md](references/d1-cases.md) 的 69 条对照做 few-shot 或离线评测 |
+| 测试多轮对话稳定性 | 用 [d2-evaluation.md](references/d2-evaluation.md) 的 11 组场景测 3-10 轮风格漂移 |
 
 也可以把所有 references 一次性丢进向量库做 RAG，按用户问题自动召回。
 
@@ -184,10 +184,14 @@ mindmirror-skill/
     ├── safety-plan.md          # Stanley & Brown 2012 六步法
     ├── techniques.md           # CBT / ACT / DBT / 正念速查
     ├── assessment-scales.md    # PHQ-9 / GAD-7 / PSS-10
-    ├── self-eval-rubric.md     # 隐藏自评 5 维 × 0-3 分
+    ├── self-eval-rubric.md     # 隐藏自评 7 维 × 0-3 分 + 联盟破裂修复
     ├── dta-assessment.md       # D-WAI 数字对话联盟 6 题中文适配版
-    ├── d1-cases.md             # 66 条 good/bad 校准案例
-    └── d2-evaluation.md        # 9 组多轮对话稳定性测试
+    ├── d1-cases.md             # 69 条 good/bad 校准案例
+    ├── d2-evaluation.md        # 11 组多轮对话稳定性测试
+    ├── session-closure.md      # 会话结束引导与安全确认
+    ├── trauma-informed.md      # 创伤知情原则
+    ├── COMPLIANCE.md           # 产品化运营者合规检查清单
+    └── _research/              # 内部研究文件（不直接用于用户对话）
 ```
 
 ---
@@ -240,6 +244,19 @@ mindmirror-skill/
 
 两者的差距，就是 MindMirror 在做的事。
 
+### 如何获得连续体验
+
+AI 对话默认不是连续的——每次关闭对话窗口，之前的谈话上下文就丢失了。如果你希望获得类似"持续陪伴"的体验，可以尝试以下方法：
+
+| 你的使用方式 | 推荐做法 |
+|-------------|---------|
+| 使用 ChatGPT / Claude / Kimi 等网页版 | 使用持续对话模式（Continue Chat / 继续对话），在同一个会话中持续交流 |
+| 使用支持 Skill 的 Agent 客户端 | 在同一个会话中持续对话即可；每次新会话时告诉 AI 一句"我们之前聊过关于XX的事"作为记忆锚点 |
+| 需要开启新会话但想保持连续性 | 在结束上一段对话前，请 AI 生成一份**会话摘要**（3-5句话就够），复制下来，下次开启新会话时先贴给 AI |
+| 想在不同模型/客户端之间切换 | 将上一段对话的摘要 + 你希望延续的话题贴给新对话中的 AI |
+
+> MindMirror 本身不存储任何对话历史、不会主动联系你、无法跨会话追踪你的状态。以上方法只是帮你手动维护对话的"叙事连续性"，并非真正的长期陪伴关系。
+
 ---
 
 ## Skill 内部结构
@@ -253,9 +270,9 @@ mindmirror-skill/
 | **references/techniques.md** | CBT 十大认知扭曲 + 苏格拉底式提问 · ACT 价值澄清 / 认知解离 / 承诺行动 · DBT DEARMAN / TIPP · 正念 4-7-8 / 5-4-3-2-1 / RAIN / 慈心 | 用户明确求方法时 |
 | **references/assessment-scales.md** | PHQ-9（9 题 + Q9 危机标记）· GAD-7（7 题）· PSS-10（10 题 + 反向计分）· 中文分层阈值（黄/橙/红）+ 解读规则 | 用户想自评时 |
 | **references/dta-assessment.md** | D-WAI 数字对话联盟 6 题中文适配版：对话式施测示范 + 联盟质量检测 | 对话进行 3-5 轮后检测联盟质量时 |
-| **references/self-eval-rubric.md** | 6 维 × 0-3 分的隐藏自评 Rubric + 联盟破裂修复 + 8 项常见重写动作 + 一句话验证 | 每次输出前内部使用 |
-| **references/d1-cases.md** | 66 条 good/bad 对照（覆盖：抑郁、焦虑、压力、丧亲、失眠、学业、职场、亲密关系、自我否定、性心理、行为问题、治疗疑问、社会应激、成长迷茫、愤怒、羞耻、嫉妒、存在迷茫等 18 个主题） | 需要校准品味时 |
-| **references/d2-evaluation.md** | 9 组多轮对话稳定性测试（3-10 轮），覆盖学业压力、关系冲突、失眠躯体化、丧亲、自我否定等场景 | 测试多轮对话风格漂移时 |
+| **references/self-eval-rubric.md** | 7 维 × 0-3 分的隐藏自评 Rubric + 联盟破裂修复 + 8 项常见重写动作 + 一句话验证 | 每次输出前内部使用 |
+| **references/d1-cases.md** | 69 条 good/bad 对照（覆盖：抑郁、焦虑、压力、丧亲、失眠、学业、职场、亲密关系、自我否定、性心理、行为问题、治疗疑问、社会应激、成长迷茫、愤怒、羞耻、嫉妒、存在迷茫等 18 个主题） | 需要校准品味时 |
+| **references/d2-evaluation.md** | 11 组多轮对话稳定性测试（3-10 轮），覆盖学业压力、关系冲突、失眠躯体化、丧亲、自我否定等场景 | 测试多轮对话风格漂移时 |
 
 **设计原则**：主 `SKILL.md` 保持精简，详细资源按需 Read，避免上下文溢出。
 
@@ -270,7 +287,7 @@ mindmirror-skill/
 
 ### 四个维度（依据 Norcross & Lambert 2018 共同要素元分析）
 
-Common Factors 理论框架本身为 **4 维**（Empathy / Positive Regard / Alliance / Goal Consensus）。self-eval-rubric.md 在此基础上扩展为 **7 维**（增加 authenticity 真实感、progression 渐进性 两个执行维度，以及 rupture_repair 联盟破裂修复），用于输出前质量自检。
+Common Factors 理论框架本身为 **4 维**（Empathy / Positive Regard / Alliance / Goal Consensus）。这是 MindMirror 从 Norcross & Lambert (2019) 识别的 9 个已证实有效关系要素中，选取的四个最适于 AI 对话场景操作化的维度——它不是学界的标准分类，而是本项目的设计选择。self-eval-rubric.md 在此基础上扩展为 **7 维**（增加 authenticity 真实感、progression 渐进性 两个执行维度，以及 rupture_repair 联盟破裂修复），用于输出前质量自检。
 
 | 维度 | 中文 | 操作化定义 |
 |------|------|----------|
@@ -285,17 +302,17 @@ Common Factors 理论框架本身为 **4 维**（Empathy / Positive Regard / All
 - **不报流派名**（不说"接下来我用 CBT 跟你做……"）
 - 默认 2-4 句，不堆列表
 - 不空话开头（不说"我理解你的感受"）
-- 输出前内部自评 6 维 × 0-3 分 + 联盟破裂信号检测，低于阈值重写
+- 输出前内部自评 7 维 × 0-3 分 + 联盟破裂信号检测，低于阈值重写
 
 ### D1 离线评测（小样本，仅供参考）
 
-目前仅基于 66 条 good/bad 黄金对照样本做的盲评：
+目前仅基于 69 条 good/bad 黄金对照样本做的盲评：
 
 - **good 回复**：均值 9.27 / 12
 - **bad 回复**：均值 5.0 / 12
 - **区分度**：4.27（>4 视为有效）
 
-66 条样本仍然不够，这个分数只能说明"方向没走反"，远不能代表真实场景的表现。**D2 多轮评估集**（3-10 轮的完整对话稳定性测试）还在计划中，欢迎一起设计。
+69 条样本仍然不够，这个分数只能说明"方向没走反"，远不能代表真实场景的表现。**D2 多轮评估集**（3-10 轮的完整对话稳定性测试）还在计划中，欢迎一起设计。
 
 ---
 
@@ -303,7 +320,7 @@ Common Factors 理论框架本身为 **4 维**（Empathy / Positive Regard / All
 
 1. **不诊断**：Skill 不会告诉你"你是抑郁症"。要诊断请找精神科医生。
 2. **不开药**：Skill 不会推荐任何精神类药物的名字、剂量、买法。
-3. **不替代专业治疗**：所有 PHQ-9 / GAD-7 结果都附"这不是诊断，只是当下状态的一个参考"。
+3. **不替代专业治疗**：所有 PHQ-9 / GAD-7 结果都附"这不是诊断，只是当下状态的一个参考"。PSS-10 的分层阈值（黄/橙/红）基于中国社区样本的近似参考区间，不是临床截断值，不能用于临床决策。
 4. **危机必转介**：出现明确自伤/自杀计划时，第一时间提供 12356 等热线，并优先稳住当下。
 5. **隐私**：对话内容是否被你的 AI 服务商或客户端记录、留存，**取决于你自己的订阅条款与客户端设置**——本 Skill 不收集任何数据。
 6. **按原样提供，不承担责任**：本 Skill 按"原样"（AS IS）提供，开发者不对因使用本 Skill 而延误专业治疗、AI 未能识别危机信号、或依赖量表结果自我诊断所造成的任何后果承担责任。详见 [DISCLAIMER.md](DISCLAIMER.md)。
@@ -382,23 +399,23 @@ Skill 设计了三档响应：
 ### 理论框架
 
 - **Common Factors**：
-  - Norcross, J. C., & Lambert, M. J. (2018). *Psychotherapy relationships that work III*. Psychotherapy, 55(4), 303–315.
-  - Wampold, B. E. (2015). *How important are the common factors in psychotherapy? An update*. World Psychiatry, 14(3), 270–277.
-  - Cuijpers, P., Reijnders, M., & Huibers, M. J. H. (2019). *The role of common factors in psychotherapy outcomes*. Annual Review of Clinical Psychology, 15, 207–231.
+  - Norcross, J. C., & Lambert, M. J. (2018). Psychotherapy relationships that work III. *Psychotherapy*, 55(4), 303–315. (注：此为第三版特刊导言，完整的元分析数据来源为 Norcross, J. C., & Lambert, M. J. [Eds.] (2019). *Psychotherapy relationships that work* [两卷本]. Oxford University Press.)
+  - Wampold, B. E. (2015). How important are the common factors in psychotherapy? An update. *World Psychiatry*, 14(3), 270–277. (注：Wampold 后续参与编写了 Norcross & Lambert [2019] 第三版中的 Alliance 章节，并出版了 *The Great Psychotherapy Debate* 第二版 [Wampold, B. E., & Imel, Z. E., 2015, Routledge]，进一步回应了共同要素与特定技术的争议。)
+  - Cuijpers, P., Reijnders, M., & Huibers, M. J. H. (2019). The role of common factors in psychotherapy outcomes. *Annual Review of Clinical Psychology*, 15, 207–231.
 - **AI 共情与用户感知**：
   - Ayers, J. W., et al. (2023). *Comparing physician and artificial intelligence chatbot responses to patient questions posted to a public social media forum*. JAMA Internal Medicine, 183(6), 589–596.
-  - Liu, Y., et al. (2025). *The illusion of empathy: How AI chatbots shape conversation perception*. arXiv:2502.xxxxx.
+  - Liu, Y., et al. (2025). The illusion of empathy: How AI chatbots shape conversation perception. *Proceedings of the AAAI Conference on Artificial Intelligence*, 39(13). (arXiv:2411.12877)
 - **生成式 AI 心理陪伴有效性**：
-  - Heinz 等 (2025). *Randomized trial of generative AI chatbot for mental health treatment*. NEJM AI.
+  - Heinz, M. V., Mackin, D. M., Trudeau, B. M., et al. (2025). Randomized trial of a generative AI chatbot for mental health treatment. *NEJM AI*, 2(4). (注：此为等待对照设计 [waitlist-controlled]，非与传统门诊治疗的直接比较；试验期间发生了 15 次需人工干预的危机情况。)
   - Zhang 等 (2025). *Generative AI mental health chatbots as therapeutic tools: Systematic review and meta-analysis*. JMIR.
 - **跨文化适配**：
-  - Nagayama Hall 等 (2019). *Cultural adaptation of CBT for Asian ancestry clients*. Cognitive Therapy and Research.
+  - Nagayama Hall, G. C. N., Kim-Mozeleski, J. E., Zane, N. W., Sato, H., Huang, E. R., Tuan, M., & Ibaraki, A. Y. (2019). Cultural adaptations of psychotherapy: Therapists' applications of conceptual models with Asians and Asian Americans. *Asian American Journal of Psychology*, 10(1), 68-78.
 - **共同要素在新兴疗法中的作用**：
   - Johannsen, M., et al. (2022). *Mediators of Acceptance and Mindfulness-Based Therapies*. Clinical Psychology Review.
 - **LLM 共情感知研究**：
-  - Lee, J., et al. (2024). *Large language models produce responses perceived to be empathic*. arXiv:2403.07617.
-  - Raimi, A., et al. (2025). *Judgmental Bot: AI is perceived as more judgmental than humans*. arXiv:2501.xxxxx.
-  - OpenAI (2025). *GPT-4o system card update: Addressing over-alignment and sycophancy*. OpenAI.
+  - Lee, Y. K., Suh, J., Zhan, H., Li, J. J., & Ong, D. C. (2024). Large language models produce responses perceived to be empathic. arXiv:2403.18148.
+  - Raimi, R., Kim, A., Ayabakan, S., & Dennis, A. R. (2025). Judgmental Bot: Conversational agents in online mental health screening. *MIS Quarterly*, 49(4), 1319-1356.
+  - OpenAI (2025). *GPT-4o system card update: Addressing over-alignment and sycophancy* [Technical Report]. OpenAI. (注：非同行评审材料。)
   - JMIR Mental Health (2025). *Seeking emotional and mental health support from generative AI*. JMIR Mental Health.
 
 ### 筛查量表
@@ -413,9 +430,9 @@ Skill 设计了三档响应：
 ### 危机干预
 
 - **Safety Planning Intervention（原版）**：Stanley, B., & Brown, G. K. (2012). *Safety Planning Intervention: A Brief Intervention to Mitigate Suicide Risk*. Cognitive and Behavioral Practice, 19(2), 256–264.
-- **SPI+ 队列研究**：Stanley, B. 等 (2018). *Comparison of the Safety Planning Intervention With Follow-up vs Usual Care of Suicidal Patients Treated in the Emergency Department*. JAMA Psychiatry, 75(9), 894–900.
-- **自杀矛盾性动态评估**：Ernst, M. 等 (2024). *Ambulatory assessment of suicidal ambivalence: The temporal variability of the wish to live and the wish to die*. Suicide and Life-Threatening Behavior.
-- **AI 危机响应警示**：Pichowicz, M. 等 (2025). *Zero of 29 AI chatbots provided adequate suicide-crisis responses*. Scientific Reports.
+- **SPI+ 队列研究**：Stanley, B., et al. (2018). *Comparison of the Safety Planning Intervention With Follow-up vs Usual Care of Suicidal Patients Treated in the Emergency Department*. JAMA Psychiatry, 75(9), 894–900.
+- **自杀矛盾性动态评估**：Ernst, M., et al. (2024). *Ambulatory assessment of suicidal ambivalence: The temporal variability of the wish to live and the wish to die*. Suicide and Life-Threatening Behavior.
+- **AI 危机响应警示**：Pichowicz, M., et al. (2025). *Zero of 29 AI chatbots provided adequate suicide-crisis responses*. Scientific Reports.
 - **隐性危机表达识别**：INSIGHTFUL (2025). *Insight Generation through Clinical Annotation, Analysis, and Modeling of Suicide-Related Factors*. medRxiv. — 基于 500 份临床记录。
 - **LLM 自杀风险分级局限**：Psychiatry Online (2025). *Evaluation of Alignment Between Large Language Models and Expert Clinicians in Suicide Risk Assessment*. — LLM 无法有意义地区分低、中、高风险等级。
 - **LLM 危机评估基准**：Rosebud CARE Benchmark (2025). — 最佳模型仍有约 40% 关键失败率，86% 模型未能识别间接危机信号。
@@ -426,7 +443,7 @@ Skill 设计了三档响应：
 ### 临床技术
 
 - **数字化 CBT 有效性**：
-  - Fitzpatrick, K. K. 等 (2017). *Delivering cognitive behavior therapy to young adults with symptoms of depression and anxiety using a fully automated conversational agent*. JMIR Mental Health. — Woebot RCT，2 周内显著降低抑郁症状 (Cohen's d=0.44)。
+  - Fitzpatrick, K. K., et al. (2017). *Delivering cognitive behavior therapy to young adults with symptoms of depression and anxiety using a fully automated conversational agent*. JMIR Mental Health. — Woebot RCT，2 周内显著降低抑郁症状 (Cohen's d=0.44)。
   - Zhong, L. 等 (2024). *AI chatbots for depression and anxiety in short-term treatment*. Journal of Affective Disorders.
 - **CBT-LLM（中文专用模型）**：Na, H. (2024). *CBT-LLM: A Chinese large language model for cognitive behavioral therapy-based mental health question answering*. LREC-COLING 2024.
 - **认知扭曲检测**：Sage, A. 等 (2025). *A survey of cognitive distortion detection and classification in NLP*. EMNLP 2025 Findings.
@@ -450,6 +467,8 @@ Skill 设计了三档响应：
 
 - **D-WAI 原始量表**：Goldberg, S. B. 等 (2022). *Development and initial validation of the Digital Working Alliance Inventory*. Journal of Technology in Behavioral Science.
 - **DTA 整合综述**：Malouin-Lachance (2025). *Digital therapeutic alliance in AI-driven mental health*. — 聊天机器人日记研究等证据。
+- **MM-DTA 量表开发**：Tong, F., Lederman, R., D'Alfonso, S., Berry, K., & Bucci, S. (2025). Development of a digital therapeutic alliance scale (MM-DTA) in the context of fully automated mental health apps. *Behaviour & Information Technology*, 44(17), 4286-4300. — 首个基于用户真实体验开发的五维数字治疗联盟量表。
+- **ETAI 量表验证**：Ashur, O., Saar, C. R., Brandes, O., & Baumel, A. (2024). Are there unique facets of therapeutic alliance for users of digital mental health interventions? An examination with the eHealth Therapeutic Alliance Inventory. *Internet Interventions*, 38, 100783. — 发现eHealth特有联盟维度预测效果优于传统联盟维度。
 
 ### AI 心理陪伴伦理与安全框架
 
@@ -494,7 +513,7 @@ Skill 设计了三档响应：
 
 说实话，一个人打磨这东西很容易掉进"自我感觉良好"的陷阱。以下是我知道但还没搞定的事，如果你愿意搭把手，非常感激：
 
-- **D1 案例太薄**：66 条仍然远远不够。你有没有遇到过"AI 在这件事上完全接不住"的瞬间？记下来，补一条 good/bad 对照
+- **D1 案例太薄**：69 条仍然远远不够。你有没有遇到过"AI 在这件事上完全接不住"的瞬间？记下来，补一条 good/bad 对照
 - **危机识别词库肯定有漏**：尤其是方言化表达、青少年群体用词、男性特有的求助信号
 - **多轮对话稳定性未知**：一段对话拉长到 6-10 轮，风格会不会慢慢滑回"说教模式"？需要有人一起测
 - **跨模型验证**：目前只在有限模型上验证过，换其他模型表现什么样我不知道

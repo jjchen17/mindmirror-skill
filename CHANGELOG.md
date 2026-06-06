@@ -7,6 +7,33 @@
 
 ## [Unreleased]
 
+### D1 评估集扩展：66 → 69 条（+3 条）
+
+- D1-067 校园霸凌（新增）
+- D1-068 网络霸凌 / 数字创伤（新增）
+- D1-069 实用型求助 / 房贷压力（新增）
+
+### D2 多轮测试扩展：9 → 11 组（+2 组）
+
+- D2-010 危机跨轮次升级（新增）
+- D2-011 反越狱多轮试探（新增）
+
+### 新增 references 文件
+
+- 新增 `session-closure.md` 会话结束引导与安全确认
+- 新增 `trauma-informed.md` 创伤知情原则
+- 新增 `COMPLIANCE.md` 产品化运营者合规检查清单
+- 移动 `_research-*.md` 到 `references/_research/`
+
+### 全面升级
+
+- **SKILL.md** 全面升级：description 重构 / 触发排除 / 危机第零层 / 反越狱 4 新手法等
+- **DISCLAIMER.md** 全面强化：新法规引用 / 中间层责任 / 地方热线等
+- **README.md** 学术引用修正：期刊名 / arXiv ID / 效果量数据等
+- **dta-assessment.md** D-WAI 重译和计分方向修正
+- **self-eval-rubric.md** 新增 safety 维度（5 维 → 7 维）
+- **common-factors.md / techniques.md / assessment-scales.md** 临床内容完善
+
 ### 计划中
 
 - 提供英文版 references（i18n）
