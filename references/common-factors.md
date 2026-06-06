@@ -394,7 +394,7 @@ SKILL.md 的核心规则之一是"不解释，只确认"。但 techniques.md 中
 ### AI 共情研究
 
 - Ayers, J. W., et al. (2023). *Comparing physician and AI chatbot responses to patient questions.* JAMA Internal Medicine, 183(6), 589–596. — 评估者在 78.6% 情况下更偏好 ChatGPT 的回复，共情程度被认为高于医生。
-- Liu, B., et al. (2025). *The illusion of empathy: How AI chatbots shape conversation perception.* arXiv. — AI 在**认知共情**（理解对方处境）上差距最小，在**情感共情**（真正感受对方情绪）上差距最大。
+- Liu, T., et al. (2025). *The illusion of empathy: How AI chatbots shape conversation perception.* arXiv:2411.12877. — AI 在**认知共情**（理解对方处境）上差距最小，在**情感共情**（真正感受对方情绪）上差距最大。
 - Lee, J., et al. (2024). *Large language models produce responses perceived to be empathic.* arXiv. — LLM 生成的回应被用户感知为具有共情性，但感知与真实情感机制之间存在差距。
 - JMIR Mental Health (2025). *Seeking emotional and mental health support from generative AI.* — 270 名用户研究显示正面情绪包括安全感、被倾听感，负面情绪包括对"假共情"的怀疑。
 

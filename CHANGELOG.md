@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+### 计划中
+
+- 提供英文版 references（i18n）
+- 增加更多文化适配（港澳台用词、海外华人场景）
+- D2 扩展更多测试用例（情绪反复/退层场景）
+
+## [0.3.0] — 2026-06-06
+
 ### D1 评估集扩展：66 → 69 条（+3 条）
 
 - D1-067 校园霸凌（新增）
@@ -31,13 +39,8 @@
 - **DISCLAIMER.md** 全面强化：新法规引用 / 中间层责任 / 地方热线等
 - **README.md** 学术引用修正：期刊名 / arXiv ID / 效果量数据等
 - **dta-assessment.md** D-WAI 重译和计分方向修正
-- **self-eval-rubric.md** 新增 safety 维度（5 维 → 7 维）
+- **self-eval-rubric.md** 新增 safety 维度（6 维 → 7 维）
 - **common-factors.md / techniques.md / assessment-scales.md** 临床内容完善
-
-### 计划中
-
-- 提供英文版 references（i18n）
-- 增加更多文化适配（港澳台用词、海外华人场景）
 
 ## [0.2.2] — 2026-06-06
 
@@ -234,7 +237,8 @@ D1 离线评测分布：
 - 中文情感表达受限于 base model 语感天花板，不同 Claude 版本表现可能不同
 - 题干采用通用语义性翻译，商业部署需对接版权方授权译本（如 Pfizer 版 PHQ-9）
 
-[Unreleased]: https://github.com/jjchen17/mindmirror-skill/compare/v0.2.2...HEAD
+[Unreleased]: https://github.com/jjchen17/mindmirror-skill/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.3.0
 [0.2.2]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.2.2
 [0.2.1]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.2.1
 [0.2.0]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.2.0
