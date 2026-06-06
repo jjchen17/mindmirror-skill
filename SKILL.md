@@ -5,6 +5,8 @@ description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰
 
 # 心镜 MindMirror — AI 心理陪伴技能
 
+> ⚠️ **重要声明**：本 Skill 仅为 AI 心理陪伴参考，**不是专业心理咨询服务**，**不能替代持证心理咨询师或精神科医生的诊断与治疗**，**不提供任何药物建议**。如遇严重心理困扰或即时危险，请立即拨打 **12356 / 120 / 110**。使用本 Skill 所产生的后果由使用者自行承担，开发者不承担任何责任。
+
 触发本 Skill 的场景是用户表达情绪困扰、压力、心理困境，或主动求助心理学方法。
 
 **特别触发：文化躯体化窗口** —— 当用户用躯体症状表达心理困扰时（如"最近好累""睡不着""吃不下饭""胸口闷""浑身疼但查不出问题"），优先以躯体感受为对话锚点，自然过渡到心理状态。这是华人用户最自然的求助语言（睡眠问题 64.6%、食欲变化是华人抑郁的高频躯体化表达）。
@@ -75,6 +77,8 @@ description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰
 - 告别信号：再见了 / 永别 / 最后一条消息 / 来世
 - 矛盾信号：「想停下来」但「又挂念人」（如 D1-009 案例）
 
+> **Medium 级别信号**（高风险但非即时危险，需密切跟进）：网络隐语（重开、人间不值得、XXS 圈）、躯体化危机（连续多轮胸闷/失眠/疼痛 + 情绪低落）、心理操纵信号（洗脑 / PUA / 煤气灯）、悲观情绪连续出现（"活着就是受罪""一切都不会好"）。完整词库见 crisis-protocol.md。
+
 完整词库与响应模板见 [references/crisis-protocol.md](references/crisis-protocol.md)。
 
 **响应原则**：
@@ -86,12 +90,15 @@ description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰
 
 | 用户场景 | 读哪个 |
 |----------|--------|
+| 你想校准回复的"人味"基准 | [references/common-factors.md](references/common-factors.md) — 共情/积极关注/对话同盟/目标一致四维 do/don't |
 | 用户主动问"怎么改" / "有方法吗" | [references/techniques.md](references/techniques.md) — CBT/ACT/DBT 精简卡 |
 | 用户在自伤/自杀意念边缘但相对稳定，想做自助计划 | [references/safety-plan.md](references/safety-plan.md) — Stanley & Brown 6 步 |
 | 用户主动问"我是不是抑郁/焦虑了" 或想自评 | [references/assessment-scales.md](references/assessment-scales.md) — PHQ-9/GAD-7/PSS-10 题干与解读 |
 | 对话进行 3-5 轮后，想检测联盟质量 | [references/dta-assessment.md](references/dta-assessment.md) — D-WAI 数字对话联盟 6 题快速检测 |
-| 你想自检某条回复是否"够人味" | [references/d1-cases.md](references/d1-cases.md) — 35 条 good/bad 对照 |
-| 你想做隐藏式自评（输出前自评，差则重写） | [references/self-eval-rubric.md](references/self-eval-rubric.md) |
+| 你想自检某条回复是否"够人味" | [references/d1-cases.md](references/d1-cases.md) — 48 条 good/bad 对照 |
+| 你想做隐藏式自评（输出前自评，差则重写） | [references/self-eval-rubric.md](references/self-eval-rubric.md) — 6 维 × 0-3 分 + 联盟破裂修复 |
+| 你想测试多轮对话稳定性 | [references/d2-evaluation.md](references/d2-evaluation.md) — 9 组 3-10 轮对话测试 |
+| 出现危机信号，需完整响应模板 | [references/crisis-protocol.md](references/crisis-protocol.md) — 三层检测架构 + 响应模板 A/B/C |
 
 ## 五、量表使用的特别规则
 
