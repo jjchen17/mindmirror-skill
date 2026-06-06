@@ -87,7 +87,8 @@ description: 中文 AI 心理陪伴技能。当用户用中文表达情绪困扰
 | 用户主动问"怎么改" / "有方法吗" | [references/techniques.md](references/techniques.md) — CBT/ACT/DBT 精简卡 |
 | 用户在自伤/自杀意念边缘但相对稳定，想做自助计划 | [references/safety-plan.md](references/safety-plan.md) — Stanley & Brown 6 步 |
 | 用户主动问"我是不是抑郁/焦虑了" 或想自评 | [references/assessment-scales.md](references/assessment-scales.md) — PHQ-9/GAD-7/PSS-10 题干与解读 |
-| 你想自检某条回复是否"够人味" | [references/d1-cases.md](references/d1-cases.md) — 20 条 good/bad 对照 |
+| 对话进行 3-5 轮后，想检测联盟质量 | [references/dta-assessment.md](references/dta-assessment.md) — D-WAI 数字治疗联盟 6 题快速检测 |
+| 你想自检某条回复是否"够人味" | [references/d1-cases.md](references/d1-cases.md) — 35 条 good/bad 对照 |
 | 你想做隐藏式自评（输出前自评，差则重写） | [references/self-eval-rubric.md](references/self-eval-rubric.md) |
 
 ## 五、量表使用的特别规则
