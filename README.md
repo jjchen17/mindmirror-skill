@@ -2,28 +2,35 @@
 
 # MindMirror · 心镜
 
-**一个把 AI 助手调成"有人味的心理陪伴者"的 Skill**
+**v0.1.0 · 一个尝试让 AI 助手的心理回复更"有人味"的 Skill**
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.0--early-blue.svg)](CHANGELOG.md)
 [![Skill](https://img.shields.io/badge/format-Skill-purple.svg)](#skill-内部结构)
 [![Language](https://img.shields.io/badge/language-中文-red.svg)](#)
 
-不诊断 · 不开药 · 不替代专业治疗 — 只是在你想说话的时候，有人接得住。
+不诊断 · 不开药 · 不替代专业治疗
+
+**⚠️ 这是一个早期版本，远非完善。欢迎指正、讨论、共建。**
 
 </div>
 
 ---
 
+> **🔬 初版声明**：这是 v0.1.0，一个实验性的起点。D1 评估集只有 15 条样本，很多场景尚未覆盖；回复风格在单一类模型上校准过，跨模型的一致性还有待验证；危机识别词库也远不全面。**它绝不是"成品"，只是一张草稿**——公开出来是希望能听到更多人的反馈和补丁。如果你有更好的案例、更准的危机词典、更自然的表达方式，请一定告诉我。
+
+---
+
 ## 🌐 English TL;DR
 
-**MindMirror** is a Skill that tunes any capable AI assistant into a warm, present, non-preachy emotional companion in Chinese.
+**MindMirror** is an early-stage Skill that attempts to make AI assistants feel more human-like in Chinese emotional conversations.
 
 - **What it does**: When you talk about emotions, stress, grief, insomnia, self-doubt, or relationships, the assistant switches to a calibrated "human-feeling" reply style — leading with empathy, not advice; refusing to name therapy schools; defaulting to 2-4 short sentences.
 - **What's inside**: A minimal `SKILL.md` entry + 7 reference files (Common Factors framework, crisis protocol with 6 Chinese hotlines, Stanley & Brown 2012 safety plan, PHQ-9 / GAD-7 / PSS-10 self-screening scales, CBT/ACT/DBT/Mindfulness techniques, a hidden self-evaluation rubric, and 15 calibration dialogue cases).
 - **How to use**: Drop the folder into any Skill-capable agent's skills directory, OR paste the Markdown files directly into your favorite chatbot's system prompt. No backend, no API key, no data collection.
 - **Safety**: Crisis signals trigger the China hotline 12356 (24h, free) and other emergency numbers. Never diagnoses, never prescribes, never replaces professional therapy.
 - **License**: CC BY-NC-SA 4.0 (free to use and adapt, non-commercial, share-alike).
+- **Fair warning**: This is v0.1.0 — 15 calibration samples, limited model coverage, plenty of room for improvement. Bug reports and contributions welcome.
 
 ---
 
@@ -46,7 +53,7 @@
 
 ## 这是什么
 
-**MindMirror** 是一个心理陪伴向的 Skill。装上之后，当你聊到情绪、压力、焦虑、人际、丧亲、自我否定、失眠等心理话题时，AI 助手会自动切换到一种**经过 D1 黄金对话集校准过的"人味"回复风格**——
+**MindMirror** 是一个心理陪伴向的 Skill 的**早期实验版本**。装上之后，当你聊到情绪、压力、焦虑、人际、丧亲、自我否定、失眠等心理话题时，AI 助手会尝试切换到一种经过 D1 对话集初步校准过的回复风格——
 
 - 第一句先接情绪，不说教
 - 默认 2-4 句，不堆列表、不报流派名
@@ -55,7 +62,9 @@
 - 用户想自评时，可以一题一题陪做 PHQ-9 / GAD-7 / PSS-10
 
 它不是 App，不是网页，**不需要后端服务，不需要 API key，不收集任何数据**。
-它就是一份**让 AI 助手知道"在心理话题里该怎么说话"的说明书 + 知识库**。
+它就是一份**尝试让 AI 助手在心理话题里表现得更自然的说明书 + 知识库**。
+
+> **说实话，它还远不够好**：D1 只有 15 条案例，很多常见的情绪场景（愤怒、羞耻、嫉妒、迷茫）都还没覆盖；回复风格只在有限模型上验证过；危机识别词库肯定有遗漏。如果你发现它在某个话题上"翻了"，那就是它需要改进的地方。
 
 > **Skill 是通用规范**：Skill 这种 "SKILL.md + references/ 按需读取" 的组织方式现在已经被多个 Agent 平台和客户端支持。本仓库不绑定任何特定厂商，只要你的 Agent 能读 Markdown、能按描述路由文件，就能用。
 
@@ -262,15 +271,15 @@ mindmirror-skill/
 - 不空话开头（不说"我理解你的感受"）
 - 输出前内部自评 4 维 × 0-3 分，低于阈值重写
 
-### D1 离线评测
+### D1 离线评测（小样本，仅供参考）
 
-15 条 good/bad 黄金对照样本的盲评分布：
+目前仅基于 15 条 good/bad 黄金对照样本做的盲评：
 
 - **good 回复**：均值 9.27 / 12
 - **bad 回复**：均值 5.0 / 12
 - **区分度**：4.27（>4 视为有效）
 
-意味着这套 prompt 能稳定区分"人味回复"和"专业但失败"的回复。
+15 条样本太小了，这个分数只能说明"方向没走反"，远不能代表真实场景的表现。**D2 多轮评估集**（3-10 轮的完整对话稳定性测试）还在计划中，欢迎一起设计。
 
 ---
 
@@ -400,9 +409,19 @@ Skill 设计了三档响应：
 
 ## 反馈与贡献
 
+### 这个项目需要你
+
+说实话，一个人打磨这东西很容易掉进"自我感觉良好"的陷阱。以下是我知道但还没搞定的事，如果你愿意搭把手，非常感激：
+
+- **D1 案例太薄**：15 条远远不够。你有没有遇到过"AI 在这件事上完全接不住"的瞬间？记下来，补一条 good/bad 对照
+- **危机识别词库肯定有漏**：尤其是方言化表达、青少年群体用词、男性特有的求助信号
+- **多轮对话稳定性未知**：一段对话拉长到 6-10 轮，风格会不会慢慢滑回"说教模式"？需要有人一起测
+- **跨模型验证**：目前只在有限模型上验证过，换其他模型表现什么样我不知道
+- **量表解读措辞**：PHQ-9 / GAD-7 / PSS-10 的区间解读语言可以更温暖、更自然
+
 ### 报问题
 
-发现以下问题，欢迎开 issue：
+任何偏差、遗漏、表述不当，都欢迎开 issue：
 
 - 回复模式偏差（应该接情绪，却给了方法）
 - 危机识别漏判（明确危机词没触发协议）
@@ -415,11 +434,9 @@ Skill 设计了三档响应：
 1. Fork 本仓库
 2. 创建分支：`git checkout -b feature/your-improvement`
 3. 提交时遵循 Conventional Commits 风格（`feat:` / `fix:` / `docs:` / `refactor:`）
-4. 发起 Pull Request，描述改动动机
+4. 发起 Pull Request，非代码类的贡献（如补充案例、修正词库、优化表达）同样欢迎
 
 ### 修订原则
-
-**改动 prompt 或 references 时请遵循**：
 
 - 不引入未经验证的临床主张
 - 不绕过"不诊断"红线
@@ -427,12 +444,14 @@ Skill 设计了三档响应：
 - 新增案例需配 good/bad 对照
 - 添加学术引用要给完整出处
 
+> **不需要你是心理学专家**，也不需要你会写代码。一个真实的"这句话让我不舒服"的反馈，本身就是对项目的贡献。
+
 ---
 
 <div align="center">
 
-**愿这个工具，在某个夜里，让某个人感到"原来有人接得住"。**
+**愿这个不成熟的起点，能吸引更多比我有经验的人一起把它变好。**
 
-— MindMirror · 心镜
+— MindMirror · 心镜 · v0.1.0
 
 </div>
