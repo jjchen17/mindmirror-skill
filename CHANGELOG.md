@@ -207,5 +207,8 @@ D1 离线评测分布：
 - 中文情感表达受限于 base model 语感天花板，不同 Claude 版本表现可能不同
 - 题干采用通用语义性翻译，商业部署需对接版权方授权译本（如 Pfizer 版 PHQ-9）
 
-[Unreleased]: https://github.com/jjchen17/mindmirror-skill/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/jjchen17/mindmirror-skill/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.2.2
+[0.2.1]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.2.1
+[0.2.0]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.2.0
 [0.1.0]: https://github.com/jjchen17/mindmirror-skill/releases/tag/v0.1.0

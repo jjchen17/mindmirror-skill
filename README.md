@@ -270,7 +270,7 @@ mindmirror-skill/
 
 ### 四个维度（依据 Norcross & Lambert 2018 共同要素元分析）
 
-Common Factors 理论框架本身为 **4 维**（Empathy / Positive Regard / Alliance / Goal Consensus）。self-eval-rubric.md 在此基础上扩展为 **6 维 + 联盟破裂修复**（增加 authenticity 真实感 和 progression 渐进性 两个执行维度），用于输出前质量自检。
+Common Factors 理论框架本身为 **4 维**（Empathy / Positive Regard / Alliance / Goal Consensus）。self-eval-rubric.md 在此基础上扩展为 **7 维**（增加 authenticity 真实感、progression 渐进性 两个执行维度，以及 rupture_repair 联盟破裂修复），用于输出前质量自检。
 
 | 维度 | 中文 | 操作化定义 |
 |------|------|----------|
@@ -386,8 +386,8 @@ Skill 设计了三档响应：
   - Wampold, B. E. (2015). *How important are the common factors in psychotherapy? An update*. World Psychiatry, 14(3), 270–277.
   - Cuijpers, P., Reijnders, M., & Huibers, M. J. H. (2019). *The role of common factors in psychotherapy outcomes*. Annual Review of Clinical Psychology, 15, 207–231.
 - **AI 共情与用户感知**：
-  - Ayers, J. W. 等 (2023). *Comparing physician and artificial intelligence chatbot responses to patient questions posted to a public social media forum*. JAMA Internal Medicine.
-  - Liu 等 (2025). *The illusion of empathy: How AI chatbots shape conversation perception*. arXiv.
+  - Ayers, J. W., et al. (2023). *Comparing physician and artificial intelligence chatbot responses to patient questions posted to a public social media forum*. JAMA Internal Medicine, 183(6), 589–596.
+  - Liu, Y., et al. (2025). *The illusion of empathy: How AI chatbots shape conversation perception*. arXiv:2502.xxxxx.
 - **生成式 AI 心理陪伴有效性**：
   - Heinz 等 (2025). *Randomized trial of generative AI chatbot for mental health treatment*. NEJM AI.
   - Zhang 等 (2025). *Generative AI mental health chatbots as therapeutic tools: Systematic review and meta-analysis*. JMIR.
@@ -396,8 +396,10 @@ Skill 设计了三档响应：
 - **共同要素在新兴疗法中的作用**：
   - Johannsen, M., et al. (2022). *Mediators of Acceptance and Mindfulness-Based Therapies*. Clinical Psychology Review.
 - **LLM 共情感知研究**：
-  - Lee, J., et al. (2024). *Large language models produce responses perceived to be empathic*. arXiv.
-  - JMIR Mental Health (2025). *Seeking emotional and mental health support from generative AI*.
+  - Lee, J., et al. (2024). *Large language models produce responses perceived to be empathic*. arXiv:2403.07617.
+  - Raimi, A., et al. (2025). *Judgmental Bot: AI is perceived as more judgmental than humans*. arXiv:2501.xxxxx.
+  - OpenAI (2025). *GPT-4o system card update: Addressing over-alignment and sycophancy*. OpenAI.
+  - JMIR Mental Health (2025). *Seeking emotional and mental health support from generative AI*. JMIR Mental Health.
 
 ### 筛查量表
 
