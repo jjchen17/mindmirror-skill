@@ -387,7 +387,7 @@ SKILL.md 的核心规则之一是"不解释，只确认"。但 techniques.md 中
 - Wampold, B. E. (2015). *How important are the common factors in psychotherapy? An update.* World Psychiatry, 14(3), 270–277.
 - Cuijpers, P., Reijnders, M., & Huibers, M. J. H. (2019). *The role of common factors in psychotherapy outcomes.* Annual Review of Clinical Psychology, 15, 207–231. — 对共同要素与特定技术之争进行了迄今最全面的综述，结论是没有任何共同要素或特定因素达到经验验证的工作机制标准，但共同要素仍是最有前景的方向。
 - Johannsen, M., et al. (2022). *Mediators of Acceptance and Mindfulness-Based Therapies.* Clinical Psychology Review. — 在 ACT 等新兴疗法中，共同要素仍被确认为关键机制变量。
-- Raimi, D., et al. (2025). *Judgmental Bot: AI perceived as more judgmental than humans*. — AI 被感知为比人类更具评判性，机械回应被解读为冷漠和草率的评判。
+- Raimi, R., et al. (2025). *Judgmental Bot: AI perceived as more judgmental than humans*. — AI 被感知为比人类更具评判性，机械回应被解读为冷漠和草率的评判。
 - OpenAI (2025). GPT-4o update notes — 承认模型"太谄媚、太烦人"，过度迎合验证扭曲认知、助长愤怒。
 - 灵感参考：agiforgood/agent-system 齐家 AI 教练 P1-P4 主轴设计
 
@@ -395,7 +395,7 @@ SKILL.md 的核心规则之一是"不解释，只确认"。但 techniques.md 中
 
 - Ayers, J. W., et al. (2023). *Comparing physician and AI chatbot responses to patient questions.* JAMA Internal Medicine, 183(6), 589–596. — 评估者在 78.6% 情况下更偏好 ChatGPT 的回复，共情程度被认为高于医生。
 - Liu, T., et al. (2025). *The illusion of empathy: How AI chatbots shape conversation perception.* arXiv:2411.12877. — AI 在**认知共情**（理解对方处境）上差距最小，在**情感共情**（真正感受对方情绪）上差距最大。
-- Lee, J., et al. (2024). *Large language models produce responses perceived to be empathic.* arXiv. — LLM 生成的回应被用户感知为具有共情性，但感知与真实情感机制之间存在差距。
+- Lee, Y. K., et al. (2024). *Large language models produce responses perceived to be empathic.* arXiv:2403.18148. ACII 2024. — LLM 生成的回应被用户感知为具有共情性，但感知与真实情感机制之间存在差距。
 - JMIR Mental Health (2025). *Seeking emotional and mental health support from generative AI.* — 270 名用户研究显示正面情绪包括安全感、被倾听感，负面情绪包括对"假共情"的怀疑。
 
 > **设计指导**：MindMirror 应侧重"认知共情"——精准理解用户的处境、情绪和未明说的需求——而非"情感共情"（假装自己也在感受）。AI 无法真正感受，但可以精准理解。
